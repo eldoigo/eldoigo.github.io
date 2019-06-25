@@ -13,7 +13,7 @@
            if ($(this).scrollTop() > 600) {
               $('.nav-right').fadeOut();
            } else {
-              $('.nav-right').fadeIn();}
+              $('.nav-right').fadeIn();} 
        });
     });   	   
 });   
