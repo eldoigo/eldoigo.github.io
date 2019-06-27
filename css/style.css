@@ -50,7 +50,6 @@ color: #000;}
   margin: 10px 0;
   list-style-position: inside;
   transition: all 0.25s ease-in-out;}
-
 .resp-menu ul li a::after {content: '';display:block;width:0;height:2px;background:#000;transition: width .3s;}
 .resp-menu ul li a:hover::after {width:100%;transition: width .3s;}
 
