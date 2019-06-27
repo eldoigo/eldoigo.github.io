@@ -25,12 +25,12 @@
 
 //FONT & IMG FADE IN
 
-$('header').delay(200).fadeIn(100).removeClass('hidden');
-$('.hero-holder').delay(220).fadeIn(150).removeClass('hidden');
 
-//	$('header').delay(2600).fadeIn(1000).removeClass('hidden');
-//	$('.hero-holder').delay(3000).fadeIn(1500).removeClass('hidden');
+$('header').delay(2600).fadeIn(1000).removeClass('hidden');
+$('.hero-holder').delay(3000).fadeIn(1500).removeClass('hidden');
 
+//$('header').delay(200).fadeIn(100).removeClass('hidden');
+// $('.hero-holder').delay(220).fadeIn(150).removeClass('hidden');
 // Smooth scroll effect by ancoring
 
 $('a').click(function(){

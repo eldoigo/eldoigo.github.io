@@ -8,6 +8,7 @@
 <title>Bon Accord Engineering</title>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" href="https://use.typekit.net/rba1luy.css">
+<link href="css/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,12 +57,12 @@
 <div class="resp-menu">
 				<div class="exit flex flex-directionColumn flex-absolute-centre margin-auto">X</div>
 					<ul>
-							<li><a class="sub1" href="https://www.facebook.com/dominicstakeawayhull/">HOME</a></li>
+							<li><a class="sub1" href="#hero">HOME</a></li>
 							<li><a class="sub1" href="#hero-mid">STUDBOLTS & FASTENERS</a></li>
 							<li><a class="sub1" href="#">COATING & PLATING</a></li>
 							<li><a class="sub1" href="#">MACHINING</a></li>
 							<li><a class="sub1" href="#">QUALITY</a></li>
-							<li><a class="sub1" href="#">CONTACT</a></li>
+							<li><a class="sub1" href="#hero-bot">CONTACT</a></li>
 					</ul>
 				</div>		
 	
@@ -82,33 +83,34 @@
 					</div></div></div></div>
 <!--HERO-MID-->
 		<div id="hero-mid" class="flex flex-absolute-centre margin-auto min-size-rule flex-directionColumn">
-		
+	
 			<div class="mid-1 hero-mid-section-rules flex flex-directionColumn flex-absolute-centre margin-auto">
-				<div class="mid-1-holder flex flex-directionRow box-shadow-mid flex-mob-column">
+				
+				<div class="mid-1-holder flex flex-directionRow box-shadow-mid flex-mob-column" data-aos="flip-left">
 					<div class="mid-1-text flex flex-directionColumn flex-absolute-centre"><p>Our massive stock is supported by a diverse machine shop and coating division, with plating facilities</p></div>
 					<div class="mid-1-bolts mid-1-rules flex align-text-centre flex-directionColumn flex-absolute-centre">
-						<div class="bolts-holder holder-rules flex flex-directionColumn flex-absolute-centre align-text-centre margin-auto">
+						<a href="#hero"><div class="bolts-holder holder-rules flex flex-directionColumn flex-absolute-centre align-text-centre margin-auto">
 							<div class="top-bolt mid1-top flex flex-directionColumn flex-absolute-centre margin-auto">
 							<div class="bolts flex flex-absolute-centre margin-auto flex-directionColumn"></div>
 							</div>
  							<div class="bot-bolt mid1-bot flex flex-directionColumn flex-absolute-centre"><p>Stud Bolts & Fasteners</p></div>
-						</div>	
+							</div></a>
 					</div>
 					<div class="mid-1-coatings mid-1-rules flex align-text-centre flex-directionColumn flex-absolute-centre">
-						<div class="coatings-holder flex flex-directionColumn flex-absolute-centre align-text-centre holder-rules">
+						<a href="#hero"><div class="coatings-holder flex flex-directionColumn flex-absolute-centre align-text-centre holder-rules">
 							<div class="top-coat mid1-top flex flex-directionColumn flex-absolute-centre">
 							<div class="coats flex flex-absolute-centre margin-auto flex-directionColumn"></div></div>
  							<div class="bot-coat mid1-bot flex flex-directionColumn flex-absolute-centre"><p>Coatings & Platings</p></div>
-						</div>	
+							</div>	</a>
 					</div>
 					<div class="mid-1-machining mid-1-rules flex align-text-centre flex-directionColumn flex-absolute-centre ">
-						<div class="machaning-holder flex flex-directionColumn flex-absolute-centre align-text-centre holder-rules">
+						<a href="#hero"><div class="machaning-holder flex flex-directionColumn flex-absolute-centre align-text-centre holder-rules">
 							<div class="top-mach mid1-top flex flex-directionColumn flex-absolute-centre">
 							<div class="mach flex flex-absolute-centre margin-auto flex-directionColumn"></div></div>
  							<div class="bot-mach mid1-bot flex flex-directionColumn flex-absolute-centre"><p>Machining</p></div>
-						</div>	
+							</div>	</a>
 					</div>
-				</div>
+				</div><!--mid-1-holder-->
 			
 			</div>
 			<div class="mid-2 hero-mid-section-rules flex flex-directionColumn flex-absolute-centre">
@@ -122,12 +124,52 @@
 			<div class="mid-3-image flex flex-directionColumn flex-absolute-centre"><a href="#hero-bot">
 						<button class="button" style="vertical-align:middle"><span>Contact Us </span></button></a></div>
 			</div></div>
-			<div id="hero-bot"></div>
-		
+			
+	<!--Hero Bot-->	
+		<div id="hero-bot" class="flex flex-directionRow flex-absolute-centre min-size-rule">
+				<div class="bot-left flex flex-directionColumn flex-absolute-centre">
+					<div class="left-top flex flex-directionColumn"><h2>About Us</h2><p>Successfully building on our reputation as a supplier of quality products and services, we at Bon Accord Engineering are proud of our ability to adapt to meet the client's individual needs. From the beginning, we have had a policy of constant staff retraining and upgrading of machinery and facilities. The Sales team, based in Aberdeen, also offers many years’ experience and a broad knowledge of our vast range of products, all from our constantly maintained large stock.</p><p class="p-move"><a href="#hero">Read More</a></p></div>
+					<div class="left-bot flex flex-directionColumn flex-absolute-centre">
+						<div class="contact-info flex flex-directionColumn flex-absolute-centre">
+							<div class="contact1 flex flex-directionRow flex-absolute-centre">
+								<div class="mob-image flex"></div>
+								<div class="mob-text flex flex-directionColumn flex-absolute-centre"><p>+44 (0)1224 878898</p></div>
+							</div>
+							<div class="contact2 mob-text flex flex-directionRow flex-absolute-centre">
+								<div class="email-image flex flex-directionColumn flex-absolute-centre"></div>
+								<div class="email-text flex flex-directionColumn flex-absolute-centre"><p>sales@bonaccordengineering.com</p></div>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+				
+				
+				
+				<div class="bot-right flex flex-directionColumn flex-absolute-centre">
+					<div class="right-holder flex flex-directionColumn flex-absolute-centre background-blue">
+						<div class="right-top flex"><h2>When customers choose Bon Accord Engineering as their fastener supplier, they can expect:</h2></div>
+						<div class="right-bottom flex flex-directionRow flex-absolute-centre margin-auto">
+							<div class="text-left flex flex-directionColumn flex-absolute-centre"><p>The fastest quote to delivery times for standard and special fasteners in the UK</p><p>A portfolio that enables us to take on any enquiry with a fast response</p><p>The ability to supply globally</p></div>
+							<div class="text-right flex flex-directionColumn flex-absolute-centre"><p>A team that has a depth of knowledge that can guide the customer to what the requirement is if they are unsure or need advice</p><p>Urgent weekend or after hours call-outs are a common occurrence which we thrive on</p></div>
+						</div>
+					</div>
+			</div>
+			</div>
+		<footer>
+			
+			
+		</footer>
 	
 		
 	</div><!--wrapper-end-->
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/script.js"></script>
+<script src="js/aos.js"></script>
+<script>
+  AOS.init({
+  duration: 1200,
+});
+</script>
 </body>
 </html>
