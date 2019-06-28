@@ -163,8 +163,8 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .contact-info p{font-size: 10px;}
 .contact1{height:auto;width:100%;text-align:left;;margin-top:60px;}
 .contact2{height:auto;width:100%;text-align:left;margin-top:30px;}
-.mob-image{width:90px;height:110px;min-height:80px;background:url("../img/mob.png")no-repeat;background-size:cover;}
-.email-image{width:90px;height:110px;min-height:80px;background:url("../img/email.png")no-repeat;background-size:cover;}
+.mob-image{width:90px;height:110px;min-height:80px;min-width: 110px; background:url("../img/mob.png")no-repeat;background-size:cover;}
+.email-image{width:90px;height:110px;min-height:80px;min-width: 110px; background:url("../img/email.png")no-repeat;background-size:cover;}
 
 .mob-text{width:100%;height:100%;text-align: left;}
 .mob-text p{font-size: 19px;}
@@ -254,13 +254,7 @@ footer{height:300px;width:100%;background-color:#606060}
         opacity: 0.2;}}
 
 									/*Mobile Site*/
-@media screen and (max-width: 1400px){
-	.mob-image{width:90px;height:70px;}
-	.email-image{width:90px;height:70px;}
-	.contact1 p{font-size:12px;}
-	.contact2 p{font-size:12px;}
-	
-}
+
 @media screen and (max-width: 1100px){
 nav ul li a{font-size:1vw;}
 	.nav-left{width:20%;}
@@ -326,6 +320,7 @@ nav ul li a{font-size:1vw;}
 	.right-bottom p{font-size:22px;}
 	.text-left{width:80%;height:90%;padding:15px 15px;margin-bottom:auto;}
 .text-right{width:80%;height:90%;padding:15px 15px;margin-bottom:auto;}
-	
+	.mob-image{width:90px;height:110px;min-height:80px;min-width: 110px; background:url("../img/mob.png")no-repeat;background-size:cover;}
+.email-image{width:90px;height:110px;min-height:80px;min-width: 110px; background:url("../img/email.png")no-repeat;background-size:cover;}
 	footer{height:500px;}
 }
