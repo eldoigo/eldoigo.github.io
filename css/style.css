@@ -130,9 +130,9 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .mid-1-holder{width:70%;height:70%;}
 .mid-1-holder a{margin:auto;}
 .mid-1-holder a :hover {transform: scale(1.05);}
-.mid-1-holder p {color:#fff;font-size:12px;}
+.mid-1-holder p {color:#fff;font-size:15px;}
 .mid-1-text{width:40%;height:100%;text-align:left;background-color:#80C2DF;color:#fff;}
-.mid-1-text p{margin-left:15px;font-size: 15px;}
+.mid-1-text p{margin-left:15px;font-size: 18px;}
 .mid-1-rules{width:20%;height:100%;}
 .holder-rules{width:90%;height:90%;}
 .mid1-top{height:80%;width:100%;}
@@ -145,10 +145,10 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .mach{background:url("../img/mach-logo.png")no-repeat;background-size:cover;height:90px;width:90px;}
 .mid2-text{width:30%;height:70%;}
 .mid2-image{width:110px;height:90px;background:url("../img/blue-tick.png")no-repeat;}
-.mid2-text p{margin:0; font-size:14px;color:#000;}
-.mid2-text h2{font-size:22px;color:#000;}
+.mid2-text p{margin:0; font-size:18px;color:#000;}
+.mid2-text h2{font-size:25px;color:#000;}
 .mid-3-holder{margin-top:15px;width:70%;height:60%;align-content: flex-end;align-items: flex-end;background:url("../img/drill.png")no-repeat center;background-size:cover;}
-.mid-3-text{width:40%;height:85%;align-self: flex-end;background: rgba(204,128,223,0.80);}
+.mid-3-text{width:40%;height:auto;align-self: flex-end;background: rgba(204,128,223,0.80);}
 .mid-3-text p{font-size:14px;text-align:center;color:#fff;font-style: bold;letter-spacing:1px; }
 .mid-3-image{width:60%;height:5px;background-color:#CC80DF;z-index:300;}
 
