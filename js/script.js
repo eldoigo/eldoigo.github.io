@@ -25,7 +25,6 @@
 
 //FONT & IMG FADE IN
 
-
 $('header').delay(2000).fadeIn(500).removeClass('hidden');
 $('.hero-holder').delay(2100).fadeIn(500).removeClass('hidden');
 
