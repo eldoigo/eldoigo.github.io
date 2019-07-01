@@ -57,7 +57,7 @@ color: #000;}
 
 /*LOADING SCREEN*/
 #loader{
-	display: none;
+
 z-index:1000;
 width:100%;
 height:100%;
@@ -112,6 +112,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .h-holder-two h1{color:#000;font-family:"mr-eaves-modern",sans-serif;font-size:50px;font-weight:200;font-style:normal;}
 .h-holder-three{width:100%;height:40%;min-height:165px;}
 .main-logo-holder{height:200px;width:200px;background:url("../img/logo_main.png")no-repeat;background-size:contain;}
+.main-logo-holder:hover {transform: scale(1.4);}
 .hero-text p{color:#000;font-family:"caviar-dreams";font-size:1.5vw;font-weight:50;font-style:normal;text-align: center;}
 .hero-text{width:43%;height:50%;text-align: center;}
 .menu-text p:hover{transform: scale(1.2);}
@@ -161,6 +162,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .left-top p{font-size:12px;}
 .left-bot{width:100%;height:auto;}
 .p-move{text-align:right;}
+.p-move:hover{transform: scale(1.05);}
 .contact-info{height:auto;width:100%;}
 .contact-info p{font-size: 10px;}
 .contact1{height:auto;width:100%;text-align:left;;margin-top:60px;}
@@ -172,14 +174,14 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .mob-text p{font-size: 19px;}
 .email-text{width:100%;height:100%;text-align: left;}
 .email-text p{font-size:19px;margin-left:30px;}
-.right-holder{height:70%;width:80%;background-color: #80C2DF;}
+.right-holder{height:auto;width:80%;background-color: #80C2DF;}
 .right-top{width:60%;height:50%;margin-right:auto;}
 .right-top h2{text-align:left;color:#fff;font-size:20px;padding:10px 10px;}
-.right-bottom{width:100%;height:50%;}
+.right-bottom{width:100%;height:auto;}
 .right-bottom p{color:#fff;font-size:14px;}
-.text-left{width:40%;height:90%;padding:15px 15px;margin-bottom:auto;}
-.text-right{width:40%;height:90%;padding:15px 15px;margin-bottom:auto;}
-
+.text-left{width:40%;height:auto;padding:15px 15px;margin-bottom:auto;text-align: left;margin-right: auto;}
+.text-right{width:40%;height:auto;padding:15px 15px;margin-bottom:auto;text-align: left;margin-right: auto}
+.mar-left p{text-align: left;margin-right:auto;}
 /*Footer*/
 
 footer{height:300px;width:100%;background-color:#606060}
@@ -202,7 +204,7 @@ footer{height:300px;width:100%;background-color:#606060}
 .foot-bot-text{width:60%;height:50%;margin-bottom:auto;}
 .foot-bot-text p{font-size:12px;color:#fff;letter-spacing: 3px;padding-top:10px;}
 .certs{width:500px;height:140px;background:url("../img/certs.png")no-repeat;background-size:contain;}
-.certs:hover {transform: scale(1.1);}
+.certs:hover {transform: scale(1.4);}
 
 
 /*ANIMATIONS*/

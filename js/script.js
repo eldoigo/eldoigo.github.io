@@ -26,11 +26,10 @@
 //FONT & IMG FADE IN
 
 
-$('header').delay(260).fadeIn(100).removeClass('hidden');
-$('.hero-holder').delay(300).fadeIn(150).removeClass('hidden');
+$('header').delay(2000).fadeIn(500).removeClass('hidden');
+$('.hero-holder').delay(2100).fadeIn(500).removeClass('hidden');
 
-//$('header').delay(200).fadeIn(100).removeClass('hidden');
-// $('.hero-holder').delay(220).fadeIn(150).removeClass('hidden');
+
 // Smooth scroll effect by ancoring
 
 $('a').click(function(){
