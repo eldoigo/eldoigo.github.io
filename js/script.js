@@ -19,14 +19,13 @@
 });   
 }(jQuery));
 
-
 	
-	$("#loader").delay(1800).fadeOut("1000");
+$("#loader").delay(1800).fadeOut("1000");
 
 //FONT & IMG FADE IN
 
 $('header').delay(2000).fadeIn(500).removeClass('hidden');
-$('.hero-holder').delay(2100).fadeIn(500).removeClass('hidden');
+
 
 
 // Smooth scroll effect by ancoring
