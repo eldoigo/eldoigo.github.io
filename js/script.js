@@ -11,9 +11,9 @@
        $(function () {
          $(window).scroll(function () {
            if ($(this).scrollTop() > 300) {
-              $('.nav1').fadeOut();
+              $('.header1').fadeOut();
            } else {
-              $('.nav1').fadeIn();} 
+              $('.header1').fadeIn();} 
        });
     });   	   
 });   
