@@ -197,14 +197,19 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .b-bot-right{width:50%;height:100%;}
 .bolt-holder{width:65%;height:auto;margin-bottom:0px;}
 .b-bot-right-holder{width:90%;height:400px;}
-.b-bot-right-text-holder{width:100%;height:70%;background-color:darkgrey;text-align:left;}
+.b-bot-right-text-holder{width:80%;height:70%;background-color:darkgrey;text-align:left;}
 .b-bot-right-text-holder p{align-self: flex-start;color:#fff;font-family:"open-sans-p";font-size:30px;padding:15px 15px;}
 .b-bot-right-button-holder{width:100%;height:30%;padding-top:0px;}
 .b-bot-right-text{height:100%;width:60%;align-self: flex-start;}
 .bolt-but-holder{height:25%;width:50%;}
 .bolt-but-holder p, a {color:#fff;font-size:20px;font-family:"open-sans-p";text-decoration:none}
-
-#bolt-bottom{width:100%;height:100vh;}
+#bolt-bottom{width:100%;height:auto;}
+#bolt-bottom .left-top p{font-size:25px;}
+#bolt-bottom .left-top h2{font-size:35px;}
+#bolt-bottom .text-left {width:100%;}
+.text-left ul li {list-style:circle;font-size:18px;}
+#bolt-bottom .right-holder{height:550px;}
+.right-top h2{font-size:30px;}
 
 /*Footer*/
 footer{height:300px;width:100%;background-color:#606060;}
@@ -330,15 +335,12 @@ nav ul li a{font-size:1vw;}
 .hero-mid-section-rules{width:100%;height:auto;}
 .mid-1-holder{width:100%;height:auto;}
 .mid-1-holder p {color:#fff;font-size:13px;text-align: center;}
-.mid-1-text{width:100%;height:150px;text-align:left;background-color:#80C2DF;color:#fff;margin:auto;}
+.mid-1-text{width:100%;height:150px;text-align:left;background-color:#CC80DF;color:#fff;margin:auto;}
 .mid-1-text p{margin-left:0px;font-size: 15px;width:60%;}
 .mid-1-rules{width:100%;height:200px;margin:auto;}
 .holder-rules{width:100%;height:90%;margin:auto;}
 .mid1-top{height:80%;width:100%;}
 .mid1-bot{height:20%;width:100%;}
-.mid-1-bolts{background-color:#DFCC80;}
-.mid-1-coatings{background-color:#8099DF;}
-.mid-1-machining{background-color:#CC80DF;}
 .bolts{background:url("../img/bolts-logo.png")no-repeat;background-size:cover;height:90px;width:90px;}
 .coats{background:url("../img/coat-logo.png")no-repeat;background-size:cover;height:90px;width:90px;}
 .mach{background:url("../img/mach-logo.png")no-repeat;background-size:cover;height:90px;width:90px;}
@@ -362,7 +364,7 @@ nav ul li a{font-size:1vw;}
 	.mob-text p{font-size: 10.5px;}
 	.email-text p{font-size: 10.5px;margin-left:0px;}
 	.right-top h2{text-align:left;color:#fff;margin-top:200px;font-size:28px;padding:10px 10px;}
-	.right-holder{height:90%;width:100%;background-color: #80C2DF;}
+	.right-holder{height:90%;width:100%;background-color:darkgrey;}
 .right-top{width:80%;height:auto;margin-right:auto;}
 .right-top h2{text-align:left;color:#fff;font-size:30px;padding:10px 10px;}
 .right-bottom{width:100%;height:auto;flex-direction: column;text-align: center;}
@@ -415,7 +417,7 @@ footer{height:1000px;width:100%;background-color:#606060}
 .carousel-cell img {display: block;height:300px;width:450px;}
 .button {width:150px;}
 
-
+#bolt-bottom .right-holder{height:auto;}
 
 
 

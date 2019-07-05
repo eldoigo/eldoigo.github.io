@@ -10,10 +10,10 @@
      $(document).ready(function(){
        $(function () {
          $(window).scroll(function () {
-           if ($(this).scrollTop() > 600) {
-              $('.nav-right').fadeOut();
+           if ($(this).scrollTop() > 300) {
+              $('.nav1').fadeOut();
            } else {
-              $('.nav-right').fadeIn();} 
+              $('.nav1').fadeIn();} 
        });
     });   	   
 });   
