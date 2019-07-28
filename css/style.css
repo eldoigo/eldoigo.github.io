@@ -194,22 +194,38 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .b-header-h1{width:80%;height:10%;}
 .b-header-h1 h1{font-size: 30px;text-align: left;color:#fff;}
 .b-bot-left{width:50%;height:100%;}
-.b-bot-right{width:50%;height:100%;}
+.b-bot-right{width:50%;height:auto;}
 .bolt-holder{width:65%;height:auto;margin-bottom:0px;}
-.b-bot-right-holder{width:90%;height:400px;}
-.b-bot-right-text-holder{width:80%;height:70%;background-color:darkgrey;text-align:left;}
+.b-bot-right-holder{width:90%;height:auto;}
+.b-bot-right-text-holder{width:80%;height:auto;background-color:darkgrey;text-align:left;}
 .b-bot-right-text-holder p{align-self: flex-start;color:#fff;font-family:"open-sans-p";font-size:30px;padding:15px 15px;}
+.b-bot-right-text-holder-coat p{align-self: flex-start;color:#fff;font-family:"open-sans-p";font-size:15px;padding:15px 15px;}
+.b-bot-right-text-holder-coat{height:auto;}
+.b-bot-right-text-holder-coat h3{align-self: flex-start;color:#fff;font-family:"open-sans-p";font-size:20px;padding:15px 15px;}
 .b-bot-right-button-holder{width:100%;height:30%;padding-top:0px;}
 .b-bot-right-text{height:100%;width:60%;align-self: flex-start;}
+.b-bot-right-text-coat{height:100%;width:100%;align-self: flex-start;}
 .bolt-but-holder{height:25%;width:50%;}
 .bolt-but-holder p, a {color:#fff;font-size:20px;font-family:"open-sans-p";text-decoration:none}
 #bolt-bottom{width:100%;height:auto;}
+.left-top {height:auto;}
 #bolt-bottom .left-top p{font-size:25px;}
 #bolt-bottom .left-top h2{font-size:35px;}
 #bolt-bottom .text-left {width:100%;}
-.text-left ul li {list-style:circle;font-size:18px;}
-#bolt-bottom .right-holder{height:550px;}
+.left-top ul li {list-style:circle;font-size:18px;}
+#bolt-bottom .right-holder{height:auto;}
 .right-top h2{font-size:30px;}
+
+
+/*coatings*/
+.left-top-coat {height:auto;font-size:15px;}
+.left-top-coat p{padding:25px 25px;}
+.left-top-coat h2{padding:25px 25px;font-size:25px;}
+.coats-info {width:100%;height:auto;}
+.coats-info ul li { font-size:15px;color:#000;padding:5px 5px;text-align:left;list-style:disc;}
+.coats-info h2 {padding:5px 5px;}
+
+
 
 /*Footer*/
 footer{height:300px;width:100%;background-color:#606060;}
@@ -397,7 +413,7 @@ footer{height:1000px;width:100%;background-color:#606060}
 .foot-bot-text p{font-size:12px;color:#fff;letter-spacing: 3px;padding-top:30px;}
 .certs{width:200px;height:140px;background:url("../img/certs.png")no-repeat;background-size:contain;margin-top:100px;}
 /*BOLTS PAGE*/
-#bolt-bottom{height:auto;flex-direction: column;}
+#bolt-bottom{height:auto;flex-direction: column;margin-top:120px;}
 .b-header-bot{flex-direction: column;height:auto;width:100%;}
 .bolts-head{height:100vh;width: 100%;}
 .b-header{height:200px;width:100%;background-color:#CC80DF;}
@@ -405,15 +421,15 @@ footer{height:1000px;width:100%;background-color:#606060}
 .b-header-h1{width:80%;height:10%;margin-bottom:40px;}
 .b-header-h1 h1{font-size: 30px;text-align: left;color:#fff;}
 .b-bot-left{width:100%;height:auto;}
-.b-bot-right{width:100%;height:100%;}
+.b-bot-right{width:100%;height:auto;}
 .bolt-holder{width:100%;height:auto;padding-top:0px;}
-.b-bot-right-holder{width:100%;height:300px;}
+.b-bot-right-holder{width:100%;height:auto;}
 .b-bot-right-text-holder{width:100%;height:70%;background-color:darkgrey;text-align:center;}
-.b-bot-right-text-holder p{color:#fff;font-family:"open-sans-p";font-size:30px;padding:15px 15px;}
+
 .b-bot-right-button-holder{width:100%;height:30%;margin-top:0px;}
 .b-bot-right-text{height:100%;width:100%;}
 .bolt-but-holder{height:25%;width:50%;}
-.bolt-but-holder p, a {color:#fff;font-size:20px;font-family:"open-sans-p";text-decoration:none}
+
 .carousel-cell img {display: block;height:300px;width:450px;}
 .button {width:150px;}
 
