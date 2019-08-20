@@ -151,9 +151,10 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .mid2-image{width:110px;height:150px;background:url("../img/blue-tick.png")no-repeat;margin-top:2px;}
 .mid2-text p{margin:0; font-size:11px;color:#000;}
 .mid2-text h2{font-size:16px;color:#000;}
-.mid-3-holder{margin-top:15px;width:70%;height:60%;align-content: flex-end;align-items: flex-end;background:url("../img/drill.png")no-repeat center;background-size:cover;}
+.mid-3-holder{margin-top:15px;width:80%;height:100%;align-content: flex-end;align-items: flex-end;background:url("../img/drill.png")no-repeat center;background-size:cover;}
 .mid-3-text{width:40%;height:80%;align-self: flex-end;background: rgba(204,128,223,0.80);}
 .mid-3-text p{font-size:12px;text-align:center;color:#fff;font-style: bold;letter-spacing:1px; }
+.mid-3-text h2{text-align:center;color:#fff;font-style: bold;letter-spacing:1px; }
 .mid-3-image{width:60%;height:5px;background-color:#CC80DF;z-index:300;}
 
 /*Hero-Low*/
@@ -225,7 +226,19 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .coats-info ul li { font-size:15px;color:#000;padding:5px 5px;text-align:left;list-style:disc;}
 .coats-info h2 {padding:5px 5px;}
 
+/*Machining - Sean*/
+.left-top-machining {font-family:"caviar-dreams";height:auto;font-size:15px; max-width: 70%;}
+.left-top-machining p{padding:10px 25px;}
+.left-top-machining h2{padding:10px 25px;font-size:25px;}
 
+/*quality*/
+.quality-holder{width:100%;height:100%;}
+.qua-column-1{width:50%;height:100%;}
+.qua-column-2{width:50%;height:100%;}
+.q-header{min-height:200px;width:100%;background-color:#131313;}
+.qua-para1{width:70%;margin:auto;height:100%;}
+.qua-col-1-top{height:50%;width:100%;}
+.qua-col-1-bot{height:50%;width:100%;}
 
 /*Footer*/
 footer{height:300px;width:100%;background-color:#606060;}
@@ -253,6 +266,14 @@ footer{height:300px;width:100%;background-color:#606060;}
 .certs:hover {transform: scale(1.2);}
 .terms-dl{color:mediumpurple;font-size:15px;}
 .terms-dl:hover {color:darkred;}
+
+
+
+
+
+/*GOOGLE MAP*/
+.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}
+
 
 /*LOADER ANIMATIONS*/
 .circle{width: 180px;height: 180px;border: 10px inset rgb(133,224,242);display: block;position: fixed;top: 50%;left: 50%;margin-left: -100px;margin-top: -100px;border-radius: 200px;-moz-animation: rotate 5s infinitelinear;-webkit-animation: rotate 5s infinite linear;animation: rotate 5s infinite linear;box-shadow: 0 0 5px rgba(0,0,0,0.2);}
@@ -364,8 +385,8 @@ nav ul li a{font-size:1vw;}
 .mid2-image{width:110px;height:90px;background:url("../img/blue-tick.png")no-repeat;margin-top:20px;margin-bottom:20px;}
 .mid2-text p{margin:0; font-size:15px;color:#000;}
 .mid2-text h2{font-size:18px;color:#000;margin-top:20px;}
-.mid-3-holder{margin-top:15px;width:70%;height:300px;align-content: flex-end;align-items: flex-end;background:url("../img/drill.png")no-repeat center;background-size:cover;}
-.mid-3-text{width:90%;height:80%;margin:auto;background: rgba(204,128,223,0.70);}
+.mid-3-holder{margin-top:15px;width:80%;height:auto;align-content: flex-end;align-items: flex-end;background:url("../img/drill.png")no-repeat center;background-size:cover;}
+.mid-3-text{width:100%;height:auto;margin:auto;background: rgba(204,128,223,0.70);}
 .mid-3-text p{font-size:12px;text-align:center;color:#fff;font-style: bold;}
 .mid-3-image{width:60%;height:5px;background-color:#CC80DF;}
 #hero-bot {flex-direction: column;}
@@ -435,6 +456,7 @@ footer{height:1000px;width:100%;background-color:#606060}
 
 #bolt-bottom .right-holder{height:auto;}
 
-
+.left-top-machining {max-width: 90%;}     /*machining mobile - Sean*/
+.mapouter{position:relative;text-align:right;height:372px;width:297px;}.gmap_canvas {overflow:hidden;background:none!important;height:372px;width:297px;}
 
 }
