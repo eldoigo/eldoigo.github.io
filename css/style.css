@@ -107,7 +107,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .exit:hover{transform: scale(1.2);}
 /*Hero*/
 /*Hero*/
-#hero{height:100vh;width:100vw;background:url("../img/hero.jpg")no-repeat center;background-size:cover;}
+#hero{height:100vh;width:100vw;background:url("../img/hero-background1.png")no-repeat center;background-size:cover;}
 .hero-holder{width:80%;height:70%;background:rgba(255,255,255,0.65);}
 .h-holder-one{width:100%;height:40%;}
 .h-holder-two{width:100%;height:15%;max-height:50px;}
@@ -161,7 +161,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 #hero-bot {height:auto;width:100vw;margin-top:20px;font-family:"open-sans-p";}
 .bot-left{width:50%;height:100%;margin-top:60px;}
 .bot-right{width:50%;height:100%;margin-top:60px;}
-.left-top{width:80%;height:auto;text-align: left;}
+.left-top{width:80%;height:auto;text-align: left;margin-bottom: 20px;}
 .left-top h2{text-align: left;margin-top:0px;}
 .left-top p{font-size:12px;}
 .left-bot{width:100%;height:auto;}
@@ -213,9 +213,10 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 #bolt-bottom .left-top p{font-size:25px;}
 #bolt-bottom .left-top h2{font-size:35px;}
 #bolt-bottom .text-left {width:100%;}
-.left-top ul li {list-style:circle;font-size:18px;}
+.left-top ul li {list-style:decimal;font-size:18px;}
 #bolt-bottom .right-holder{height:auto;}
 .right-top h2{font-size:30px;}
+.text-left ul li{list-style: disc;}
 
 
 /*coatings*/
@@ -356,6 +357,7 @@ nav ul li a{font-size:1vw;}
 @media screen and (max-width: 850px){
 .header2{z-index:100;}
 .nav1{display:none;}
+	#hero{background:url("../img/mob-hero.png")no-repeat center;background-size:cover;}
 .nav2{display: flex;z-index: 100;}
 .logo{width:120px;height:70px;display:none;}
 .logo:hover {transform: scale(1.1);}
