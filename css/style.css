@@ -122,7 +122,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .mach-move{padding-left:6.5px;}
 
 /*Hero-Button temp for git*/
-.button {display: inline-block;border-radius: 50px;background-color:#561577;border: none;color:#FFF;text-align:center;font-family:open-sans-p, sans-serif;font-size:1.1vw;font-style: normal;height:50px;width:200px;transition: all 0.5s;cursor: pointer;margin: 5px;}
+.button {display: inline-block;border-radius: 50px;background-color:#561577;border: none;color:#FFF;text-align:center;font-family:open-sans-p, sans-serif;font-size:1vw;font-style: normal;height:50px;width:200px;transition: all 0.5s;cursor: pointer;margin: 5px;}
 .button span {cursor: pointer;display: inline-block;position: relative;transition: 0.5s;}
 .button span:after {content: '\00bb';position: absolute;opacity: 0;top: 0;right: -20px;transition: 0.5s;}
 .button:hover span {padding-right: 25px;}
