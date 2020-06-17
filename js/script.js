@@ -21,7 +21,7 @@
 
 	
 $("#loader").delay(1800).fadeOut("1000");
-
+/*$("#loader").delay(100).fadeOut("100");*/
 //FONT & IMG FADE IN
 
 $('header').delay(2000).fadeIn(500).removeClass('hidden');
