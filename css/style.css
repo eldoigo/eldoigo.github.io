@@ -92,9 +92,9 @@ position:fixed;}
 /*HEADER/NAV STYLING*/
 .header1{display:none;width:100%;height:80px;top:0;left:0;position:fixed;z-index: 20;}
 .header2{display:none;width:100%;height:80px;top:0;left:0;position:fixed;z-index: 15;}
-nav{display:none;width:97%;height:75px;padding:5px;margin:auto;}
+nav{display:none;width:97%;height:75px;padding:5px;margin-top:10px;}
 .nav-settings{width:50%;height:75px;margin:0;padding:0;}
-.logo{width:205px;height:115px;background:url("../img/logo-white.png")no-repeat;background-size:contain;float:left;transition: transform .6s;/* Animation */}
+.logo{width:205px;height:115px;background:url("../img/logo-white.png")no-repeat;background-size:contain;float:left;transition: transform .6s;margin:15px 0 0 15px;/* Animation */}
 .logo:hover {transform: scale(1.1);}
 .nav-left{align-items:flex-start;margin:5px 0;width:20%;height:75px;padding:0;}
 .nav-right{width:80%;height:75px;padding:0;margin-bottom:auto;justify-content: flex-end;text-align: right;}
@@ -142,7 +142,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .mid-1-holder a :hover {transform: scale(1.05);}
 .mid-1-holder p {color:#fff;font-size:1.2vw;}
 .mid-1-text{width:40%;height:100%;text-align:left;background-color:#3F3931;color:#fff;}
-.mid-1-text p{margin-left:15px;font-size:1.4vw;}
+.mid-1-text p{padding:8px 8px;font-size:1.4vw;}
 .mid-1-rules{width:20%;height:100%;}
 .holder-rules{width:90%;height:90%;}
 .mid1-top{height:80%;width:100%;}
@@ -187,23 +187,24 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .email-text p{font-size:19px;margin-left:30px;}
 .right-holder{height:auto;width:80%;background-color:darkgrey;opacity: 0.88;}
 .right-top{width:100%;margin-right:auto;text-align:center;align-content: center;}
-.right-top h2{text-align:center;color:#fff;font-size:2rem;padding:5px 5px;align-content: center;}
+.right-top h2{text-align:center;color:#fff;font-size:2rem;padding:5px 5px;align-content: center;font-family:"thin-header";}
 .right-bottom{width:100%;height:auto;}
 .right-bottom p{color:#fff;font-size:14px;}
-.text-left{width:50%;height:auto;padding:15px 15px;margin-bottom:auto;text-align: left;margin-right: auto;}
+.text-left{width:100%;height:auto;padding:15px 15px;margin-bottom:auto;text-align: left;margin-right: auto;}
 .text-right{width:50%;height:auto;padding:15px 15px;margin-bottom:auto;text-align: left;margin-right: auto;}
 .mar-left p{text-align: left;margin-right:auto;}
+.margin-adjust-one{margin-bottom:20px;}
 
-/*Bolts*/
-#bolts{background-color:#131313;}
+/*Full Livery*/
+#bolts{height:100vh;width:100vw;background-color:#b9e0ff;}
 .bolts-head{height:100vh;width: 100%;}
-.b-header{height:20%;width:100%;background-color:#131313;}
+.b-header{height:20%;width:100%;background-color:#6F7973;}
 .b-header-bot{height:80%;width:100%;background:url("../img/main-horse.jpg")no-repeat;background-size: cover;background-position: center;}
-.b-header-h1{width:80%;height:10%;}
-.b-header-h1 h1{font-size: 30px;text-align: left;color:#fff;font-family:"thin-header";}
+.b-header-h1{width:80%;height:10%;margin-left:40px;}
+.b-header-h1 h1{font-size: 45px;text-align: left;color:#fff;font-family:"thin-header";}
 .b-bot-left{width:50%;height:100%;}
 .b-bot-right{width:50%;height:auto;}
-.bolt-holder{width:65%;height:auto;margin-left:30px;min-width:570px;background:url("../img/certs.png")no-repeat;background-size:100%;background-position: center;}
+.bolt-holder{width:65%;}
 .b-bot-right-holder{width:90%;height:auto;}
 .b-bot-right-text-holder{width:80%;height:auto;background-color:darkgrey;text-align:left;}
 .b-bot-right-text-holder p{align-self: flex-start;color:#fff;font-family:"open-sans-p";font-size:30px;padding:15px 15px;}
@@ -222,7 +223,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 #bolt-bottom .text-left {width:100%;}
 .left-top {list-style:none;font-size:18px;}
 #bolt-bottom .right-holder{height:auto;}
-.text-right, .text-left li{font-size:18px;}
+.text-right, .text-left li{font-size:21px;font-family:"thin-header";}
 .text-left {list-style: disc;}
 .bolting-hero{width:auto;height:400px;background:none;background-size:cover;}
 .decimals{list-style:disc;}
@@ -449,7 +450,7 @@ nav ul li a{font-size:1vw;}
 	.contact2{margin-top:40px;}
 	.mob-text p{font-size: 10.5px;}
 	.email-text p{font-size: 10.5px;margin-left:0px;}
-	.right-top h2{text-align:left;color:#fff;margin-top:50px;font-size:28px;padding:10px 10px;}
+	.right-top h2{text-align:left;color:#fff;margin-top:50px;font-size:28px;padding:10px 10px;font-family:"thin-header";}
 	.right-holder{height:100%;width:100%;background-color:darkgrey;}
 .right-top{width:80%;height:auto;margin-right:auto;}
 .right-top h2{text-align:left;color:#fff;font-size:30px;padding:10px 10px;}
@@ -485,12 +486,12 @@ footer{height:1000px;width:100%;background-color:#606060}
 
 			/*BOLTS MOBILE EDITS*/
 #bolt-bottom{height:auto;flex-direction: column;}
-.b-header-bot{flex-direction: column;height:auto;width:100%;background:none;}
+.b-header-bot{flex-direction: column;height:auto;width:100%;}
 .bolts-head{height:auto;width: 100%;}
-.b-header{min-height:400px;width:100%;background-color:#131313;}
-.b-header-h1{width:80%;height:10%;margin-bottom:20px;}
-.b-header-h1 h1{font-size: 30px;text-align: left;color:#fff;}
-.b-bot-left{width:100%;height:100px;}
+.b-header{min-height:400px;width:100%;}
+.b-header-h1{width:80%;height:10%;margin:auto;justify-content: center;align-content: center;align-items: center;flex-direction: column;}
+.b-header-h1 h1{font-size: 30px;text-align: left;color:#fff;margin:auto;display:flex;}
+.b-bot-left{display:none;}
 .b-bot-right{width:100%;height:auto;}
 .b-bot-right-holder{width:100%;height:auto;}
 .b-bot-right-text-holder{width:100%;height:70%;background-color:darkgrey;text-align:center;}
@@ -501,8 +502,5 @@ footer{height:1000px;width:100%;background-color:#606060}
 #bolt-bottom .right-holder{height:auto;}
 .left-top-machining {max-width: 90%;}     /*machining mobile - Sean*/
 .mapouter{position:relative;text-align:right;height:372px;width:297px;}.gmap_canvas {overflow:hidden;background:none!important;height:372px;width:297px;}
-.bolt-holder{width:100%;height:auto;margin-bottom:30px;min-width:325px;margin-left:0px;background:none;}
-.bolting-hero{width:100%;background:url("../img/coats/hero-main.jpg")no-repeat center;background-size: contain;margin-bottom:100px;}
-.coating-hero{width:100%;height:300px;background:url("../img/machine-image.jpg")no-repeat center;background-size: cover;}
-	.b-header h1{margin-bottom:200px;}
+
 }
