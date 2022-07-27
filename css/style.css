@@ -65,16 +65,16 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 
 /*Font*/
 .lato-regular-shadows{font-family: "LatoWeb Regular";margin: auto; text-shadow: 1px 2px 3px #000000;}
-h1{color: white;font-size:4vw;}
-h2{color: white;font-size:2vw;}
+h1{color: white;font-size:5vw;}
+h2{color: white;font-size:2.5vw;}
 
 /*Hero*/
-#ems-header{height:800px;width:100%;background:url("../img/mainheader.svg")no-repeat center;background-size:cover;}
+#ems-header{height:800px;width:100%;background:url("../img/mainheader.jpg")no-repeat center;background-size:cover;}
 .emsheaderholder{width:80%;height:80%;}
-.headerholder-logo{height:20%;width:100%;background-image: url("../img/Group 43.svg");background-size: 80% 80%;background-repeat: no-repeat;background-position: center;}
+.headerholder-logo{height:20%;width:100%;background-image: url("../img/cogs.png");background-size: contain;background-repeat: no-repeat;background-position: center;}
 .headerholder-title{height:20%;width:100%;}
-.headerholder-description{height:30%;width:100%;}
-#ems-logos{height:1000px;width:100vw;background-color:#F5F8FA;}
+.headerholder-description{height:30%;width:100%;padding-top: 100px;}
+#ems-logos{height:700px;width:100vw;background-color:#F5F8FA;}
 
 
 #hero{height:100vh;width:100vw;background:url("../img/offshore.jpg")no-repeat center;background-size:cover;}
