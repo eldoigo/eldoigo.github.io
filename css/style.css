@@ -28,6 +28,7 @@ a {text-decoration: none;}
 .flex-directionColumn{flex-direction:column;}
 .flex-directionRow{flex-direction:row;}
 .flex-absolute-centre{justify-content: center;align-content: center;align-items: center;}
+.flex-spaceout{justify-content:space-evenly;}
 .margin-auto{margin:auto;}
 .align-text-centre{text-align: center;}
 .background-blue{background-color: blue;}
@@ -67,6 +68,7 @@ ul li a:hover::after {width:100%;transition: width .3s;}
 .lato-regular-shadows{font-family: "LatoWeb Regular";margin: auto; text-shadow: 1px 2px 3px #000000;}
 h1{color: white;font-size:5vw;}
 h2{color: white;font-size:2.5vw;}
+.font-size{font-size:3.5vw;text-shadow:none;color:#33475B;}
 
 /*Hero*/
 #ems-header{height:800px;width:100%;background:url("../img/mainheader.jpg")no-repeat center;background-size:cover;}
@@ -74,9 +76,24 @@ h2{color: white;font-size:2.5vw;}
 .headerholder-logo{height:20%;width:100%;background-image: url("../img/cogs.png");background-size: contain;background-repeat: no-repeat;background-position: center;}
 .headerholder-title{height:20%;width:100%;}
 .headerholder-description{height:30%;width:100%;padding-top: 100px;}
-#ems-logos{height:700px;width:100vw;background-color:#F5F8FA;}
+#ems-logos{height:800px;width:100vw;background-color:#F5F8FA;}
+.logo-paragrapgh{height:50%;width:100%;}
+.logo-container{height:50%;width:100%;}
+.logo-holder{height:80%;width:29%;border-radius:7px;}
+.logo-holder1{z-index: 1000;background-color:rgba(75,75,75,1.00);}
+.logo-divider-adamson{height:5%;width:100%;background-color:#516F90;border-radius:7px 7px 0 0;}
+.logo-divider-res{height:5%;width:100%;background-color:#BB5A40;border-radius:7px 7px 0 0;}
+.logo-divider-ems{height:5%;width:100%;background-color:#00BDA5;border-radius:7px 7px 0 0;}
+.logo-img-adamson{height:95%;width:100%;background:url("../img/adamsons-fabrications.jpg");background-size:100% 100%;background-repeat: no-repeat;transition: 0.5s;}
+.logo-img-adamson p, .logo-img-ems p, .logo-img-res p{opacity: 0;transition: 0.8s;font-size:100px;color:#fff;display:flex;text-align: center;}
+.logo-img-adamson:hover, .logo-img-ems:hover, .logo-img-res:hover{box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.8) inset;}
+.logo-img-adamson:hover p, .logo-img-ems:hover p, .logo-img-res:hover p{opacity:1;transform:scale(1);}
+.logo-img-res{height:95%;width:100%;background:url("../img/res.jpg");background-size:100% 100%;background-repeat: no-repeat;transition: 0.5s;}
+.logo-img-ems{height:95%;width:100%;background:url("../img/ems.jpg");background-size:100% 100%;background-repeat: no-repeat;transition: 0.5s;}
+/*hover logos*/
+.hover-adamson{height:100%;width:100% ;z-index: 100;}
 
-
+/*To delete*/
 #hero{height:100vh;width:100vw;background:url("../img/offshore.jpg")no-repeat center;background-size:cover;}
 .hero-holder{width:80%;height:70%;background:rgba(255,255,255,0.80);}
 .h-holder-one{width:100%;height:40%;}
@@ -158,6 +175,12 @@ h2{color: white;font-size:2.5vw;}
 .text-left{width:40%;height:auto;padding:15px 15px;margin-bottom:auto;text-align: left;margin-right: auto;}
 .text-right{width:40%;height:auto;padding:15px 15px;margin-bottom:auto;text-align: left;margin-right: auto}
 .mar-left p{text-align: left;margin-right:auto;}
+
+
+
+
+
+
 
 
 
