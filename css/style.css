@@ -90,8 +90,7 @@ h2{color: white;font-size:2.5vw;}
 .logo-img-adamson:hover p, .logo-img-ems:hover p, .logo-img-res:hover p{opacity:1;transform:scale(1);}
 .logo-img-res{height:95%;width:100%;background:url("../img/res.jpg");background-size:100% 100%;background-repeat: no-repeat;transition: 0.5s;}
 .logo-img-ems{height:95%;width:100%;background:url("../img/ems.jpg");background-size:100% 100%;background-repeat: no-repeat;transition: 0.5s;}
-/*hover logos*/
-.hover-adamson{height:100%;width:100% ;z-index: 100;}
+
 
 /*To delete*/
 #hero{height:100vh;width:100vw;background:url("../img/offshore.jpg")no-repeat center;background-size:cover;}
@@ -300,6 +299,14 @@ nav ul li a{font-size:1vw;}
 	.nav-right{width:80%;}
 }
 @media screen and (max-width: 1050px){
+	#ems-logos{height:auto;}
+	.logo-img-adamson:hover, .logo-img-ems:hover, .logo-img-res:hover{box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.8) inset;}
+	.logo-divider-adamson, .logo-divider-res, .logo-divider-ems {height:20px;}
+	.logo-holder{height:200px;width:50%;border-radius:7px;margin:auto;padding:40px 0 40px 0;}
+	.logo-paragrapgh{height:300px;}
+	.logo-paragrapgh h2 {font-size: 35px;}
+	
+.logo-container{flex-direction: column;justify-content: center;margin:auto;height:auto; }
 .header2{z-index:100;}
 .nav1{display:none;}
 	#hero{background:url("../img/hero-mob.jpg")no-repeat center;background-size:cover;}
@@ -380,4 +387,7 @@ footer{height:1000px;width:100%;background-color:#606060}
 .foot-bot-text{width:60%;height:auto;margin:auto;text-align: center;}
 .foot-bot-text p{font-size:12px;color:#fff;letter-spacing: 3px;padding-top:30px;}
 .certs{width:200px;height:140px;background:url("../img/certs.png")no-repeat;background-size:contain;margin-top:100px;}
+}
+@media screen and (max-width: 500px){
+	.logo-holder{width:70%;}
 }
