@@ -98,14 +98,15 @@
   /* ── PARALLAX: section band images on scroll ── */
   var bandImgs = document.querySelectorAll('.sec-band-img');
   window.addEventListener('scroll', function () {
-    var scrollY = window.scrollY;
     bandImgs.forEach(function (img) {
       var parent = img.closest('.sec-band');
       if (!parent) return;
       var rect   = parent.getBoundingClientRect();
       var center = rect.top + rect.height / 2;
-      var offset = (center - window.innerHeight / 2) * 0.18;
-      img.style.transform = 'scale(1.12) translateY(' + offset + 'px)';
+      var raw    = (center - window.innerHeight / 2) * 0.28;
+      /* clamp to ±55px so the edge of the image is never exposed */
+      var offset = Math.max(-55, Math.min(55, raw));
+      img.style.transform = 'scale(1.18) translateY(' + offset + 'px)';
     });
   }, { passive: true });
 
