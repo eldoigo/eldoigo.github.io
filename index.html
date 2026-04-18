@@ -1,504 +1,271 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TLD642XJJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5TLD642XJJ');
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dominic's Italian & BBQ — Authentic Italian cuisine and BBQ meals for takeaway or home delivery in Anlaby Common, Hull. Est. 25+ years." />
-  <meta name="keywords" content="Italian, BBQ, Hull, Anlaby Common, Takeaway, Delivery, Pizza, Pasta, Burgers" />
-  <meta name="theme-color" content="#0f0b08" />
-  <title>Dominic's Italian &amp; BBQ | Anlaby Common, Hull</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="utf-8">
+<meta name="description" content="Specialist suppliers in stud bolts and fasteners. Our massive stock is supported by a diverse machine shop and coating division, with plating facilities — Aberdeen, Scotland."/>
+<meta name="keywords" content="Aberdeen, Bon Accord, Bon Accord Engineering, Stud bolts, Fasteners, stud bolts aberdeen"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bon Accord Engineering — Aberdeen</title>
+<link rel="icon" href="./img/logo_main.png">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/flickity.min.css" media="screen">
 </head>
 <body>
 
-  <!-- ══════════════════════════════
-       LOADER
-  ══════════════════════════════ -->
-  <div id="loader">
-    <div class="loader-logo">Dominic's <span>&</span></div>
-    <div class="loader-sub">Italian &amp; BBQ · Anlaby Common</div>
-    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+<!-- LOADER -->
+<div id="loader"><div class="loader-logo"></div><div class="loader-track"><div class="loader-fill"></div></div></div>
+
+<!-- NAV (transparent — becomes solid on scroll) -->
+<nav id="nav">
+  <a href="./index.html" class="nav-logo" aria-label="Bon Accord Engineering"></a>
+  <ul class="nav-links">
+    <li><a href="./index.html" class="active">Home</a></li>
+    <li><a href="./bolts.html">Studbolts &amp; Fasteners</a></li>
+    <li><a href="./coating.html">Coating &amp; Plating</a></li>
+    <li><a href="./machining.html">Machining</a></li>
+    <li><a href="./quality.html">Quality</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-burger" id="navBurger" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
+</nav>
+<div id="nav-drawer">
+  <span class="drawer-close" id="drawerClose">&#10005; Close</span>
+  <a href="./index.html">Home</a>
+  <a href="./bolts.html">Studbolts &amp; Fasteners</a>
+  <a href="./coating.html">Coating &amp; Plating</a>
+  <a href="./machining.html">Machining</a>
+  <a href="./quality.html">Quality</a>
+  <a href="./contact.html">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HERO — offshore photo fills screen, purple panel shows with margins
+     ═══════════════════════════════════════════════ -->
+<section id="home-hero">
+  <div class="hero-frame">
+    <p class="hero-eyebrow">Aberdeen, Scotland</p>
+    <div class="hero-logo-mark" aria-hidden="true"></div>
+    <h1 class="hero-title">
+      Bon Accord Engineering
+      <em>The Complete Engineering Solution</em>
+    </h1>
+    <p class="hero-sub">Specialist suppliers of stud bolts, fasteners, coatings &amp; precision machining for Oil &amp; Gas, Renewables, Aerospace and Construction.</p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn btn-ghost">Our Services
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="./contact.html" class="btn btn-outline">Get in Touch</a>
+    </div>
   </div>
+  <div class="hero-scroll-hint" id="heroScrollHint">
+    <span>Scroll</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
 
-  <!-- ══════════════════════════════
-       NAVIGATION
-  ══════════════════════════════ -->
-  <header id="nav">
-    <div class="nav-inner">
-      <a class="nav-logo" href="#home">
-        <div class="nav-badge">D</div>
-        <div>
-          <span class="nav-logo-name">Dominic's</span>
-          <span class="nav-logo-tag">Italian &amp; BBQ · Anlaby Common</span>
-        </div>
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════════════ -->
+<section id="services">
+  <div class="services-wrap">
+    <div class="services-intro reveal">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-heading">Three Divisions.<br><span>One Solution.</span></h2>
+      <p class="section-sub">Our massive stock is backed by a diverse machine shop and full coating &amp; plating division.</p>
+    </div>
+    <div class="services-grid">
+      <a href="./bolts.html" class="svc-card reveal d1">
+        <div class="svc-icon"><img src="./img/boltslogo.png" alt=""></div>
+        <h3>Stud Bolts &amp; Fasteners</h3>
+        <p>Extensive stockholding across all grades — Carbon Steel through Inconel, Duplex, Titanium and all petrochemical grades. Rapid dispatch UK-wide.</p>
+        <span class="svc-link">Explore Range <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
+      <a href="./coating.html" class="svc-card reveal d2">
+        <div class="svc-icon"><img src="./img/coatlogo.png" alt=""></div>
+        <h3>Coatings &amp; Platings</h3>
+        <p>Complete coatings division with shot blasting facility. Zinc, PTFE/Xylan, Galvanising, Zinc Nickel and more for subsea and offshore protection.</p>
+        <span class="svc-link">Explore Range <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <a href="./machining.html" class="svc-card reveal d3">
+        <div class="svc-icon"><img src="./img/machlogo.png" alt=""></div>
+        <h3>Precision Machining</h3>
+        <p>In-house machine shop with a wide range of equipment — from non-standard fasteners to precision components, enquiry to completion.</p>
+        <span class="svc-link">Explore Range <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
 
-      <ul class="nav-links">
-        <li><a href="#starters">Starters</a></li>
-        <li><a href="#pizza">Pizza</a></li>
-        <li><a href="#pasta">Pasta</a></li>
-        <li><a href="#specials">Dom's Specials</a></li>
-        <li><a href="#bbq">BBQ &amp; Burgers</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav-cta">📞 01482 351156</a></li>
+<!-- ═══════════════════════════════════════════════
+     STATS
+     ═══════════════════════════════════════════════ -->
+<section id="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal d1"><div class="stat-num">ISO</div><div class="stat-lbl">9001:2015 Certified</div></div>
+    <div class="stat-item reveal d2"><div class="stat-num">30+</div><div class="stat-lbl">Years Experience</div></div>
+    <div class="stat-item reveal d3"><div class="stat-num">4</div><div class="stat-lbl">Industry Sectors</div></div>
+    <div class="stat-item reveal d4"><div class="stat-num">UK</div><div class="stat-lbl">Fastest Delivery</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT — harbour background visible around panel
+     ═══════════════════════════════════════════════ -->
+<section id="about-section">
+  <div class="about-inner">
+    <div class="about-text reveal-l">
+      <p class="section-label">About Us</p>
+      <h2 class="section-heading">Always <span>Expanding</span></h2>
+      <p>The team at Bon Accord Engineering, based in Aberdeen, has rapidly become a key player in the supply and manufacture of bolting solutions to the Oil &amp; Gas and Petrochemical industries.</p>
+      <p>Successfully building on our reputation as a supplier of quality products, we adapt to meet each client's individual needs with constant retraining and facility upgrades.</p>
+      <ul class="about-list">
+        <li>Fastest quote to delivery times for standard and special fasteners in the UK</li>
+        <li>Global supply capability across all industries</li>
+        <li>Urgent weekend and after-hours call-outs available</li>
+        <li>Expert team guidance on complex bolting requirements</li>
       </ul>
-
-      <button class="hamburger" id="ham" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Nav -->
-  <nav id="mob-nav">
-    <a href="#starters">Starters</a>
-    <a href="#pizza">Pizza</a>
-    <a href="#pasta">Pasta</a>
-    <a href="#specials">Dom's Specials</a>
-    <a href="#bbq">BBQ &amp; Burgers</a>
-    <a href="#about">About</a>
-    <a href="#contact" class="mob-cta">📞 01482 351156</a>
-  </nav>
-
-  <!-- ══════════════════════════════
-       HERO
-  ══════════════════════════════ -->
-  <section id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-      <div class="hero-text">
-        <p class="hero-eyebrow">Family Run · Est. 25+ Years · Hull</p>
-        <h1 class="hero-h1">
-          Dominic's
-          <em>Italian &amp; BBQ</em>
-        </h1>
-        <p class="hero-tagline">
-          Authentic Italian cuisine &amp; BBQ favourites, made fresh from scratch.
-          Takeaway or home delivery across Anlaby Common and surrounding areas of Hull.
-        </p>
-        <div class="hero-btns">
-          <a class="btn btn-red" href="#starters">View Our Menu</a>
-          <a class="btn btn-outline" href="tel:01482351156">Call to Order</a>
-        </div>
-      </div>
-
-      <div class="hero-panel">
-        <div class="hcard">
-          <div class="hcard-label">Opening Hours</div>
-          <div class="hcard-body">
-            Sun – Thu &nbsp;&nbsp; 5:00pm – 9:30pm<br>
-            Fri – Sat &nbsp;&nbsp;&nbsp;&nbsp; 5:00pm – 10:30pm<br>
-            <span class="cl">&#x25CF; Closed Mondays</span>
-          </div>
-        </div>
-        <div class="hcard">
-          <div class="hcard-label">Location &amp; Delivery</div>
-          <div class="hcard-body">
-            249 Hull Road, Anlaby Common<br>
-            <span style="color:var(--muted);font-size:12px;">Delivery available — call to confirm area</span>
-          </div>
-        </div>
-        <div class="hcard">
-          <div class="hcard-label">Contact</div>
-          <div class="hcard-body">
-            <a href="tel:01482351156" style="color:var(--white);text-decoration:none;">
-              <strong>01482 351156</strong>
-            </a><br>
-            <a href="form.html" style="color:var(--muted);font-size:12px;text-decoration:none;">
-              contact@dominicsanlaby.co.uk
-            </a>
-          </div>
-        </div>
+      <div class="about-ctas">
+        <a href="./contact.html" class="btn btn-primary">Contact Our Team</a>
+        <a href="./dlc/BonAccordEngineeringBrochure.pdf" download class="btn btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Brochure
+        </a>
       </div>
     </div>
-
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       STARTERS & SIDES
-  ══════════════════════════════ -->
-  <section id="starters" class="menu-section">
-    <div class="sec-band">
-      <div class="sec-band-img" style="background-image:url('https://images.unsplash.com/photo-1573140401552-3fab0b24306f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-      <div class="sec-band-overlay"></div>
-      <div class="sec-band-content reveal">
-        <h2 class="sec-title">Starters <span>&amp;</span> Sides</h2>
-        <div class="sec-rule"></div>
+    <div class="about-photo-panel reveal-r">
+      <div class="about-photo-inner">
+        <img src="./img/offshore.jpg" alt="Offshore platform — Bon Accord Engineering supply">
+      </div>
+      <div class="about-badge">
+        <div class="about-badge-num">ABZ</div>
+        <div class="about-badge-lbl">Aberdeen</div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="sec-body">
-      <div class="sec-inner">
-
-        <div class="sub-div reveal">
-          <span class="sub-div-label">Starters</span>
-          <div class="sub-div-line"></div>
-        </div>
-
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Garlic Mushrooms<small>Fresh mushrooms in a creamy garlic sauce with basil</small></div><div class="mi-dots"></div><div class="mi-price">£5.50</div></div>
-          <div class="mi"><div class="mi-name">Barbecue Ribs<small>Slow-cooked ribs finished in a sweet smoky BBQ sauce</small></div><div class="mi-dots"></div><div class="mi-price">£5.50</div></div>
-          <div class="mi"><div class="mi-name">Garlic Bread<small>Soft dough with garlic butter &amp; parsley</small></div><div class="mi-dots"></div><div class="mi-price">£4.50</div></div>
-          <div class="mi"><div class="mi-name">Garlic Bread with Tomato<small>Soft dough with garlic butter, parsley &amp; tomato</small></div><div class="mi-dots"></div><div class="mi-price">£5.00</div></div>
-          <div class="mi"><div class="mi-name">Garlic Bread with Cheese<small>Soft dough with garlic butter, parsley &amp; melted cheese</small></div><div class="mi-dots"></div><div class="mi-price">£5.50</div></div>
-          <div class="mi"><div class="mi-name">Spicy Garlic Bread<small>Tomato base, garlic butter, parsley &amp; jalapeño</small></div><div class="mi-dots"></div><div class="mi-price">£5.50</div></div>
-          <div class="mi"><div class="mi-name">Pesto Bread<small>Green basil pesto, tomato &amp; a hint of garlic</small></div><div class="mi-dots"></div><div class="mi-price">£5.00</div></div>
-          <div class="mi"><div class="mi-name">Onion Rings (10)<small>Finely battered with a crispy golden coating</small></div><div class="mi-dots"></div><div class="mi-price">£3.00</div></div>
-        </div>
-
-        <div class="sub-div reveal">
-          <span class="sub-div-label">Sides</span>
-          <div class="sub-div-line"></div>
-        </div>
-
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Chips</div><div class="mi-dots"></div><div class="mi-price">£2.50</div></div>
-          <div class="mi"><div class="mi-name">Chips &amp; Cheese</div><div class="mi-dots"></div><div class="mi-price">£3.50</div></div>
-          <div class="mi"><div class="mi-name">Mozzarella Sticks (5)<span class="badge-new">New</span></div><div class="mi-dots"></div><div class="mi-price">£3.00</div></div>
-          <div class="mi"><div class="mi-name">Cheese &amp; Chilli Bites (6)</div><div class="mi-dots"></div><div class="mi-price">£3.00</div></div>
-          <div class="mi"><div class="mi-name">Rice</div><div class="mi-dots"></div><div class="mi-price">£3.00</div></div>
-          <div class="mi"><div class="mi-name">Coleslaw</div><div class="mi-dots"></div><div class="mi-price">£3.50</div></div>
-          <div class="mi"><div class="mi-name">Side Salad</div><div class="mi-dots"></div><div class="mi-price">£3.00</div></div>
-          <div class="mi"><div class="mi-name">Soft Drinks (cans)</div><div class="mi-dots"></div><div class="mi-price">£1.50</div></div>
-          <div class="mi"><div class="mi-name">Sauces<small>Mayo, BBQ or Ketchup</small></div><div class="mi-dots"></div><div class="mi-price">£0.50</div></div>
-        </div>
-
-      </div>
+<!-- ═══════════════════════════════════════════════
+     INDUSTRIES
+     ═══════════════════════════════════════════════ -->
+<section id="industries">
+  <div class="ind-inner">
+    <div class="ind-text reveal-l">
+      <p class="section-label">Sectors We Serve</p>
+      <h2 class="section-heading">Built for <span>Industry</span></h2>
+      <p>Our expansive portfolio ensures we are a key asset in providing high-quality bolting solutions across multiple demanding sectors worldwide.</p>
     </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       PIZZA
-  ══════════════════════════════ -->
-  <section id="pizza" class="menu-section">
-    <div class="sec-band">
-      <div class="sec-band-img" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1600&h=500&fit=crop&crop=center&q=85');"></div>
-      <div class="sec-band-overlay"></div>
-      <div class="sec-band-content reveal">
-        <h2 class="sec-title">Fresh <span>Dough</span> Pizza</h2>
-        <div class="sec-rule"></div>
-      </div>
+    <div class="ind-tags reveal-r">
+      <span class="ind-tag">Oil &amp; Gas</span>
+      <span class="ind-tag">Petrochemical</span>
+      <span class="ind-tag">Renewable Energy</span>
+      <span class="ind-tag">Aerospace</span>
+      <span class="ind-tag">Construction</span>
+      <span class="ind-tag">Offshore</span>
     </div>
+  </div>
+</section>
 
-    <div class="sec-body">
-      <div class="sec-inner">
-        <p class="pizza-note reveal">All pizzas are made from fresh home-made dough · 11 inch · Extra toppings: Vegetables £1.00 · Meat or Cheese £1.00</p>
-
-        <div class="sub-div reveal"><span class="sub-div-label">Classic &amp; Vegetarian</span><div class="sub-div-line"></div></div>
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Margherita <span style="color:var(--muted);font-size:11px;">(v)</span><small>Cheese &amp; tomato</small></div><div class="mi-dots"></div><div class="mi-price">£7.00</div></div>
-          <div class="mi"><div class="mi-name">Funghi<small>Cheese, tomato &amp; mushroom</small></div><div class="mi-dots"></div><div class="mi-price">£7.50</div></div>
-          <div class="mi"><div class="mi-name">Sicily<small>Cheese, tomato, mushroom, peppers &amp; garlic</small></div><div class="mi-dots"></div><div class="mi-price">£8.00</div></div>
-          <div class="mi"><div class="mi-name">Vegetarian <span style="color:var(--muted);font-size:11px;">(v)</span><small>Cheese, tomato &amp; a combination of vegetables</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Pisa<small>Cheese, tomato, onions &amp; garlic</small></div><div class="mi-dots"></div><div class="mi-price">£8.00</div></div>
+<!-- ═══════════════════════════════════════════════
+     LINKEDIN / NEWS
+     ═══════════════════════════════════════════════ -->
+<section id="blog-section">
+  <div class="blog-inner">
+    <div class="blog-head reveal">
+      <div>
+        <div class="li-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Latest from LinkedIn
         </div>
-
-        <div class="sub-div reveal"><span class="sub-div-label">Meat &amp; Ham</span><div class="sub-div-line"></div></div>
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Al Capone<small>Cheese, tomato, onions, garlic &amp; chilli</small></div><div class="mi-dots"></div><div class="mi-price">£8.00</div></div>
-          <div class="mi"><div class="mi-name">Bolognese<small>Cheese &amp; bolognese sauce</small></div><div class="mi-dots"></div><div class="mi-price">£8.00</div></div>
-          <div class="mi"><div class="mi-name">Fiorentina<small>Bolognese, cheese, onion, tomato &amp; mushroom</small></div><div class="mi-dots"></div><div class="mi-price">£9.00</div></div>
-          <div class="mi"><div class="mi-name">Prosciutto<small>Cheese, tomato &amp; ham</small></div><div class="mi-dots"></div><div class="mi-price">£8.00</div></div>
-          <div class="mi"><div class="mi-name">Prosciutto Funghi<small>Cheese, tomato, ham &amp; mushrooms</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Americana<small>Cheese, tomato, onions &amp; pepperoni</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Mexican<small>Cheese, tomato, mushrooms, pepperoni &amp; chilli</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Tropicana<small>Cheese, tomato, ham &amp; pineapple</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Hawaiian<small>Cheese, tomato, mushrooms, ham &amp; pineapple</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Meat Feast<small>Cheese, tomato, ham, chicken, bolognese &amp; pepperoni</small></div><div class="mi-dots"></div><div class="mi-price">£9.50</div></div>
-          <div class="mi"><div class="mi-name">Stagioni<small>Cheese, tomato &amp; four toppings (two veg, two meat)</small></div><div class="mi-dots"></div><div class="mi-price">£9.50</div></div>
-          <div class="mi"><div class="mi-name">Special<small>Cheese, tomato &amp; a bit of everything (no seafood)</small></div><div class="mi-dots"></div><div class="mi-price">£9.50</div></div>
-        </div>
-
-        <div class="sub-div reveal"><span class="sub-div-label">Chicken &amp; Seafood</span><div class="sub-div-line"></div></div>
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Pollo<small>Cheese, tomato, mushroom &amp; chicken</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Chicken &amp; Sweetcorn<small>Cheese, tomato, chicken &amp; sweetcorn</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Kiev — Garlic<small>Cheese, tomato, chicken, mushroom, ham &amp; garlic</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">BBQ Chicken<small>Cheese, chicken &amp; BBQ base</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Tuna<small>Cheese, tomato, onion &amp; tuna</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Romana<small>Cheese, tomato, prawns &amp; garlic</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-        </div>
-
-        <div class="sub-div reveal"><span class="sub-div-label">Calzone</span><div class="sub-div-line"></div></div>
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Calzone<small>Stuffed with cheese, tomato, mushroom, ham &amp; pepperoni</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-          <div class="mi"><div class="mi-name">Special Calzone<small>Stuffed with cheese, tomato, mushroom, ham, onions &amp; garlic</small></div><div class="mi-dots"></div><div class="mi-price">£8.50</div></div>
-        </div>
-
+        <h2 class="section-heading">Latest <span>News</span></h2>
       </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       PASTA
-  ══════════════════════════════ -->
-  <section id="pasta" class="menu-section">
-    <div class="sec-band">
-      <div class="sec-band-img" style="background-image:url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=1600&h=500&fit=crop&crop=center&q=85');"></div>
-      <div class="sec-band-overlay"></div>
-      <div class="sec-band-content reveal">
-        <h2 class="sec-title">Fresh <span>Pasta</span></h2>
-        <div class="sec-rule"></div>
-      </div>
-    </div>
-
-    <div class="sec-body">
-      <div class="sec-inner">
-        <p class="pizza-note reveal">All pasta dishes are individually made to order · Linguine unless otherwise stated</p>
-
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Lasagne<small>Layers of pasta with mincemeat, tomato, white sauce &amp; herbs — oven baked</small></div><div class="mi-dots"></div><div class="mi-price">£9.00</div></div>
-          <div class="mi"><div class="mi-name">Linguine Carbonara<small>Onion, garlic, ham, cream, Parmesan &amp; parsley</small></div><div class="mi-dots"></div><div class="mi-price">£9.00</div></div>
-          <div class="mi"><div class="mi-name">Linguine Polo<small>Chicken in a sauce of tomato, onions &amp; cream — (v) available</small></div><div class="mi-dots"></div><div class="mi-price">£9.50</div></div>
-          <div class="mi"><div class="mi-name">Linguine Bolognese<small>Mincemeat &amp; tomato sauce</small></div><div class="mi-dots"></div><div class="mi-price">£9.00</div></div>
-          <div class="mi"><div class="mi-name">Linguine Napolitana<small>Tomato, olives, onions &amp; garlic — (v) available</small></div><div class="mi-dots"></div><div class="mi-price">£9.00</div></div>
-          <div class="mi"><div class="mi-name">Linguine Matriciana<small>Tomato, onions, mushrooms, ham, garlic &amp; cream — (v) available</small></div><div class="mi-dots"></div><div class="mi-price">£9.00</div></div>
-          <div class="mi"><div class="mi-name">Linguine Al Salmon<small>Smoked salmon, prawns, cream &amp; a dash of tomato</small></div><div class="mi-dots"></div><div class="mi-price">£9.50</div></div>
-          <div class="mi"><div class="mi-name">Linguine Alla Dominic's<small>Onions, garlic, tomato, basil, chicken, beef, prawns &amp; pepperoni — (v) available</small></div><div class="mi-dots"></div><div class="mi-price">£9.50</div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       DOM'S SPECIALS
-  ══════════════════════════════ -->
-  <section id="specials" class="menu-section">
-    <div class="sec-band">
-      <div class="sec-band-img" style="background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&h=500&fit=crop&crop=center&q=85');"></div>
-      <div class="sec-band-overlay"></div>
-      <div class="sec-band-content reveal">
-        <h2 class="sec-title"><span>Dom's</span> Specials</h2>
-        <div class="sec-rule"></div>
-      </div>
-    </div>
-
-    <div class="sec-body">
-      <div class="sec-inner">
-
-        <div class="info-box reveal">
-          <strong>Home-style cooking at its best.</strong> All specials served with salad, coleslaw &amp; your choice of chips or rice.
-          Choose your protein:
-          <div class="price-tiers">
-            <div class="pt"><div class="pt-label">Chicken</div><div class="pt-val">£11.00</div></div>
-            <div class="pt"><div class="pt-label">Beef Fillet</div><div class="pt-val">£13.00</div></div>
-            <div class="pt"><div class="pt-label">King Prawn</div><div class="pt-val">£13.00</div></div>
-            <div class="pt"><div class="pt-label">Mushroom (v)</div><div class="pt-val">£10.00</div></div>
-          </div>
-        </div>
-
-        <div class="sub-div reveal"><span class="sub-div-label">Choose Your Sauce</span><div class="sub-div-line"></div></div>
-
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Mediterranean<small>Onions &amp; several spices in a sauce of tomato &amp; cream</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-          <div class="mi"><div class="mi-name">Lopez<small>Onions, peppers &amp; taco sauce</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-          <div class="mi"><div class="mi-name">Au Poivre<small>Red wine, demi-glace, cream &amp; peppercorns</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-          <div class="mi"><div class="mi-name">Black Bean Sauce<small>Black bean &amp; soya sauce with peppers &amp; onions</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-          <div class="mi"><div class="mi-name">Vulcano<small>Several spices, mushrooms, onions, chilli &amp; tomato</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-          <div class="mi"><div class="mi-name">Alla Suprema<small>Onions, mushrooms, pimentos in a white creamy sauce</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-          <div class="mi"><div class="mi-name">Home-made Stroganoff<small>Onions, garlic, mushrooms in demi-glace, red wine &amp; cream</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-          <div class="mi"><div class="mi-name">Mexican Ragu<small>Onions, peppers &amp; taco sauce</small></div><div class="mi-dots"></div><div class="mi-price" style="color:var(--muted);font-size:12px;">see above</div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       BBQ & BURGERS
-  ══════════════════════════════ -->
-  <section id="bbq" class="menu-section">
-    <div class="sec-band">
-      <div class="sec-band-img" style="background-image:url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=1600&h=500&fit=crop&crop=center&q=85');"></div>
-      <div class="sec-band-overlay"></div>
-      <div class="sec-band-content reveal">
-        <h2 class="sec-title">BBQ <span>&amp;</span> Burgers</h2>
-        <div class="sec-rule"></div>
-      </div>
-    </div>
-
-    <div class="sec-body">
-      <div class="sec-inner">
-
-        <div class="sub-div reveal"><span class="sub-div-label">From the Grill</span><div class="sub-div-line"></div></div>
-        <div class="menu-grid stagger reveal">
-          <div class="mi"><div class="mi-name">Barbecue Chicken<small>Marinated chicken breast, char-grilled to perfection</small></div><div class="mi-dots"></div><div class="mi-price">£12.00</div></div>
-          <div class="mi"><div class="mi-name">Mixed Barbecue<small>Marinated beef fillet &amp; chicken breast, char-grilled to perfection</small></div><div class="mi-dots"></div><div class="mi-price">£13.00</div></div>
-          <div class="mi"><div class="mi-name">Ribs Marinated in BBQ Sauce<small>Tender &amp; juicy pork ribs barbecued to perfection</small></div><div class="mi-dots"></div><div class="mi-price">£11.00</div></div>
-          <div class="mi"><div class="mi-name">Chicken Nuggets &amp; Chips<small>Six succulent chicken tenders served with chips</small></div><div class="mi-dots"></div><div class="mi-price">£4.50</div></div>
-        </div>
-
-        <div class="info-box reveal" style="margin-top:24px;">
-          All BBQ dishes served on a bed of onion, mushroom &amp; peppers — with salad, coleslaw &amp; french fries or rice.
-        </div>
-
-        <div class="sub-div reveal"><span class="sub-div-label">Burgers</span><div class="sub-div-line"></div></div>
-        <p class="pizza-note reveal" style="margin-bottom:16px;">100% British beef burgers, cooked to perfection &amp; served with a fresh salad</p>
-
-        <div class="reveal">
-          <table class="burger-table">
-            <thead>
-              <tr>
-                <th>Burger</th>
-                <th>¼lb</th>
-                <th>½lb</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Plain</td><td>£3.50</td><td>£4.50</td></tr>
-              <tr><td>Cheese</td><td>£4.00</td><td>£5.00</td></tr>
-              <tr><td>Garlic</td><td>£4.00</td><td>£5.00</td></tr>
-              <tr><td>Mexican (Hot)</td><td>£4.00</td><td>£5.00</td></tr>
-              <tr><td>Bolognaise</td><td>£4.00</td><td>£5.00</td></tr>
-              <tr><td>Chicken</td><td>£3.50</td><td>£4.50</td></tr>
-              <tr><td>Vegetarian</td><td>£3.50</td><td>£4.50</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       ABOUT
-  ══════════════════════════════ -->
-  <section id="about">
-    <div class="about-wrap">
-      <div class="about-text reveal">
-        <p class="about-eyebrow">Our Story</p>
-        <h2 class="about-h2">A Hull Institution<br>for Over 25 Years</h2>
-        <div class="about-cols">
-          <p class="about-body">
-            Dominic's has been serving the people of Anlaby Common and the wider Hull area since the late 1990s.
-            What started as a passion for authentic Italian cooking has grown into one of the most trusted and
-            well-loved takeaways in the region.
-          </p>
-          <p class="about-body">
-            Every pizza base is hand-stretched from fresh dough. Every pasta dish is made to order.
-            Our BBQ meats are marinated in-house and cooked to order — no shortcuts, ever.
-          </p>
-        </div>
-        <div class="about-stats">
-          <div>
-            <div class="stat-num">25+</div>
-            <div class="stat-label">Years serving Hull</div>
-          </div>
-          <div>
-            <div class="stat-num">40+</div>
-            <div class="stat-label">Menu items</div>
-          </div>
-          <div>
-            <div class="stat-num">11 inch</div>
-            <div class="stat-label">Fresh-dough pizzas</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       CONTACT
-  ══════════════════════════════ -->
-  <section id="contact">
-    <div class="contact-bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&h=900&fit=crop&crop=center&q=85');"></div>
-    <div class="contact-inner">
-
-      <div class="contact-hdr reveal">
-        <p class="contact-eyebrow">Get in Touch</p>
-        <h2 class="contact-title">Find Us &amp; Order</h2>
-      </div>
-
-      <div class="contact-grid reveal">
-        <div class="ccard">
-          <span class="ccard-icon">📞</span>
-          <div class="ccard-label">Telephone</div>
-          <div class="ccard-body">
-            <strong><a href="tel:01482351156" style="color:inherit;text-decoration:none;">01482 351156</a></strong><br>
-            Call to place your order
-          </div>
-        </div>
-        <div class="ccard">
-          <span class="ccard-icon">📍</span>
-          <div class="ccard-label">Address</div>
-          <div class="ccard-body">
-            <strong>249 Hull Road</strong><br>
-            Anlaby Common, Hull
-          </div>
-        </div>
-        <div class="ccard">
-          <span class="ccard-icon">🕐</span>
-          <div class="ccard-label">Opening Hours</div>
-          <div class="ccard-body">
-            <strong>Sun – Thu</strong> &nbsp;5:00pm – 9:30pm<br>
-            <strong>Fri – Sat</strong> &nbsp;&nbsp;5:00pm – 10:30pm<br>
-            <span class="cl">Closed Mondays</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-actions reveal">
-        <a class="btn btn-red" href="tel:01482351156">📞 Call Now — 01482 351156</a>
-        <a class="btn btn-outline" href="form.html">✉ Email Us</a>
-        <a class="btn btn-outline" href="https://www.facebook.com/dominicstakeawayhull/" target="_blank" rel="noopener">f Facebook</a>
-        <a class="btn btn-outline" href="https://www.google.com/maps/@53.7447849,-0.4164236,17z" target="_blank" rel="noopener">🗺 Directions</a>
-      </div>
-
-      <a class="map-img reveal" href="https://www.google.com/maps/@53.7447849,-0.4164236,17z" target="_blank" rel="noopener">
-        <img src="img/map.PNG" alt="Map to Dominic's Takeaway, 249 Hull Road, Anlaby Common" loading="lazy" />
+      <a href="https://www.linkedin.com/company/bon-accord-engineering-ltd" target="_blank" rel="noopener" class="blog-follow-link">
+        Follow us on LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-
     </div>
-  </section>
-
-
-  <!-- ══════════════════════════════
-       FOOTER
-  ══════════════════════════════ -->
-  <footer>
-    <div class="foot-inner">
-      <p class="foot-text">&copy; 2025 Dominic's Italian &amp; BBQ · 249 Hull Road, Anlaby Common, Hull</p>
-      <div class="foot-hygiene">
-        <img src="img/food.jpg" alt="Food Hygiene Rating" />
-      </div>
-      <div class="foot-links">
-        <a href="#home">Home</a>
-        <a href="form.html">Email Us</a>
-        <a href="https://www.facebook.com/dominicstakeawayhull/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.google.com/maps/@53.7447849,-0.4164236,17z" target="_blank" rel="noopener">Directions</a>
+    <div class="li-scroll-outer reveal">
+      <div class="li-scroll">
+        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7236377372457906176" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
+        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7141101678115618816" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
+        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7125805376750415875" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
+        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7122854063083327488" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
       </div>
     </div>
-  </footer>
+    <div class="blog-cta reveal">
+      <p>Stay up to date with news, products and industry updates</p>
+      <a href="https://www.linkedin.com/company/bon-accord-engineering-ltd" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Follow on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
 
-  <script src="js/script.js"></script>
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     ANCO FEATURE
+     ═══════════════════════════════════════════════ -->
+<section id="anco-feature">
+  <div class="anco-left reveal-l">
+    <p class="section-label">Featured Product</p>
+    <h2>ANCO<sup>®</sup> <span>PN-LOC<sup>®</sup></span> Anti-Vibration Nut</h2>
+    <p>Bon Accord Engineering are the sole Western EU stockists of the ANCO<sup>®</sup> PN-LOC<sup>®</sup> Nut — a self-locking, reusable anti-vibration nut manufactured exclusively in Texas.</p>
+    <a href="./anco.html" class="btn btn-primary">Learn More <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="anco-right"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT CTA
+     ═══════════════════════════════════════════════ -->
+<section id="cta-section">
+  <div class="cta-inner">
+    <div class="cta-left reveal-l">
+      <h2>The UK's Fastest <span>Bolting Solution</span></h2>
+      <p>From initial enquiry through to delivery, our Aberdeen-based sales team ensures the fastest turnaround times for standard and special fasteners in the UK.</p>
+      <p>Urgent weekend or after-hours call-outs are a common occurrence — and something we thrive on.</p>
+      <a href="./dlc/BonAccordEngineeringBrochure.pdf" download class="cta-dl">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Brochure
+      </a>
+      <div class="expect-grid">
+        <div class="expect-item reveal d1"><span class="expect-dot"></span>Fastest UK quote to delivery</div>
+        <div class="expect-item reveal d2"><span class="expect-dot"></span>Global supply capability</div>
+        <div class="expect-item reveal d3"><span class="expect-dot"></span>Expert technical knowledge</div>
+        <div class="expect-item reveal d4"><span class="expect-dot"></span>Urgent call-out service</div>
+      </div>
+    </div>
+    <div class="cta-card reveal-r">
+      <h3>Get in Touch</h3>
+      <a href="tel:+441224878898"><div class="cta-row"><div class="cta-row-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><p>+44 (0)1224 878898</p></div></a>
+      <a href="mailto:sales@bonaccordengineering.com"><div class="cta-row"><div class="cta-row-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><p>sales@bonaccordengineering.com</p></div></a>
+      <a href="mailto:phil@bonaccordengineering.com"><div class="cta-row"><div class="cta-row-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><p>Quality: phil@bonaccordengineering.com</p></div></a>
+      <a href="./contact.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:24px;">Full Contact Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand"><div class="flogo"></div><p>Specialist suppliers of stud bolts, fasteners, coatings and machined components. Based in Aberdeen, serving the globe.</p></div>
+    <div class="foot-col"><h4>Navigation</h4><ul><li><a href="./index.html">Home</a></li><li><a href="./bolts.html">Studbolts &amp; Fasteners</a></li><li><a href="./coating.html">Coating &amp; Plating</a></li><li><a href="./machining.html">Machining</a></li><li><a href="./quality.html">Quality</a></li><li><a href="./anco.html">ANCO&reg; Nut</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+    <div class="foot-col"><h4>Downloads</h4><ul><li><a href="./dlc/BonAccordEngineeringBrochure.pdf" download>Company Brochure</a></li><li><a href="./dlc/BonAccordEngineeringLtdQMS2021.pdf" download>ISO Certification</a></li><li><a href="./dlc/BonAccordEngineeringTCs.pdf" download>Terms &amp; Conditions</a></li><li><a href="./dlc/MachineShopEquipment.pdf" download>Machine Shop Equipment</a></li><li><a href="./dlc/BonAccordEngineeringanco_pdf.pdf" download>ANCO&reg; Brochure</a></li></ul></div>
+    <div class="foot-social"><h4>Follow Us</h4><div class="social-row"><a href="https://www.facebook.com/bonaccordengineering/" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/bon-accord-engineering-ltd" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://twitter.com/BON_ACCORD_ENG" class="social-btn" aria-label="X" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/bon_accord_engineering/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div>
+  </div>
+  <div class="foot-divider"><div class="divider"></div></div>
+  <div class="foot-bottom">
+    <p>&copy; 2019&ndash;2025 Bon Accord Engineering Ltd &nbsp;|&nbsp; T: <a href="tel:01224878898">01224 878898</a> &nbsp;|&nbsp; E: <a href="mailto:sales@bonaccordengineering.com">sales@bonaccordengineering.com</a></p>
+    <a href="./dlc/BonAccordEngineeringTCs.pdf" download>Terms &amp; Conditions</a>
+    <div class="foot-cert" title="ISO 9001:2015 Certified"></div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+<script src="./js/flickity.pkgd.min.js"></script>
 </body>
 </html>

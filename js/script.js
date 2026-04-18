@@ -1,4 +1,4 @@
-/* Dominic's Italian & BBQ — site script */
+/* Bon Accord Engineering — script.js */
 
 (function () {
   'use strict';
@@ -6,108 +6,83 @@
   /* ── LOADER ── */
   window.addEventListener('load', function () {
     setTimeout(function () {
-      var loader = document.getElementById('loader');
-      if (loader) loader.classList.add('hide');
-      // trigger initial hero bg zoom
-      var heroBg = document.querySelector('.hero-bg');
-      if (heroBg) heroBg.classList.add('loaded');
-    }, 2600);
+      var l = document.getElementById('loader');
+      if (l) l.classList.add('hidden');
+    }, 1300);
   });
 
-  /* ── NAV: scroll class + hamburger ── */
-  var nav        = document.getElementById('nav');
-  var hamburger  = document.querySelector('.hamburger');
-  var mobNav     = document.getElementById('mob-nav');
-  var mobLinks   = document.querySelectorAll('#mob-nav a');
-
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 40) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+  /* ── NAV: transparent → solid on scroll (home only) ── */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    if (!nav.classList.contains('solid')) {
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      }, { passive: true });
     }
-  }, { passive: true });
+  }
 
-  if (hamburger) {
-    hamburger.addEventListener('click', function () {
-      hamburger.classList.toggle('open');
-      mobNav.classList.toggle('open');
-      document.body.style.overflow = mobNav.classList.contains('open') ? 'hidden' : '';
+  /* ── MOBILE MENU ── */
+  var burger = document.getElementById('navBurger');
+  var drawer = document.getElementById('nav-drawer');
+  var dClose = document.getElementById('drawerClose');
+
+  function openDrawer() {
+    if (!drawer || !burger) return;
+    drawer.classList.add('open');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    if (!drawer || !burger) return;
+    drawer.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (burger) burger.addEventListener('click', openDrawer);
+  if (dClose) dClose.addEventListener('click', closeDrawer);
+  if (drawer) {
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeDrawer);
     });
   }
 
-  mobLinks.forEach(function (link) {
-    link.addEventListener('click', function () {
-      hamburger.classList.remove('open');
-      mobNav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-
-  /* ── SCROLL REVEAL ── */
-  var revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .stagger');
-
+  /* ── INTERSECTION OBSERVER REVEALS ── */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
   if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('on');
-          observer.unobserve(entry.target);
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('on');
+          obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.01, rootMargin: '0px 0px 60px 0px' });
-
-    revealEls.forEach(function (el) { observer.observe(el); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    revealEls.forEach(function (el) { obs.observe(el); });
   } else {
-    // Fallback for older browsers
+    /* Fallback — just show everything */
     revealEls.forEach(function (el) { el.classList.add('on'); });
   }
 
-  /* ── SMOOTH NAV LINKS ── */
+  /* ── SMOOTH SCROLL (anchor links only) ── */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      var target = document.querySelector(this.getAttribute('href'));
+      var id = this.getAttribute('href');
+      var target = document.querySelector(id);
       if (target) {
         e.preventDefault();
-        var offset = parseInt(getComputedStyle(document.documentElement)
-          .getPropertyValue('--nav-h')) || 68;
-        var top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
 
-  /* ── ACTIVE NAV LINK HIGHLIGHT ── */
-  var sections   = document.querySelectorAll('section[id], div[id]');
-  var navAnchors = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', function () {
-    var scrollY = window.scrollY + 100;
-    sections.forEach(function (sec) {
-      if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
-        navAnchors.forEach(function (a) {
-          a.style.color = '';
-          if (a.getAttribute('href') === '#' + sec.id) {
-            a.style.color = 'var(--gold)';
-          }
-        });
-      }
+  /* ── HERO SCROLL HINT ── */
+  var scrollHint = document.getElementById('heroScrollHint');
+  if (scrollHint) {
+    scrollHint.addEventListener('click', function () {
+      var next = document.getElementById('services') || document.getElementById('page-content');
+      if (next) next.scrollIntoView({ behavior: 'smooth' });
     });
-  }, { passive: true });
-
-  /* ── PARALLAX: section band images on scroll ── */
-  var bandImgs = document.querySelectorAll('.sec-band-img');
-  window.addEventListener('scroll', function () {
-    bandImgs.forEach(function (img) {
-      var parent = img.closest('.sec-band');
-      if (!parent) return;
-      var rect   = parent.getBoundingClientRect();
-      var center = rect.top + rect.height / 2;
-      var raw    = (center - window.innerHeight / 2) * 0.28;
-      /* clamp to ±55px so the edge of the image is never exposed */
-      var offset = Math.max(-55, Math.min(55, raw));
-      img.style.transform = 'scale(1.18) translateY(' + offset + 'px)';
-    });
-  }, { passive: true });
+  }
 
 })();
