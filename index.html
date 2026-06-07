@@ -1,271 +1,627 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Specialist suppliers in stud bolts and fasteners. Our massive stock is supported by a diverse machine shop and coating division, with plating facilities — Aberdeen, Scotland."/>
-<meta name="keywords" content="Aberdeen, Bon Accord, Bon Accord Engineering, Stud bolts, Fasteners, stud bolts aberdeen"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bon Accord Engineering — Aberdeen</title>
-<link rel="icon" href="./img/logo_main.png">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/flickity.min.css" media="screen">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unlucky.gg — ARK: Survival Ascended Cluster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0b0f;
+    --bg2:       #111318;
+    --bg3:       #1a1d26;
+    --border:    rgba(255,255,255,0.07);
+    --border2:   rgba(255,255,255,0.13);
+    --red:       #e63946;
+    --red-dim:   rgba(230,57,70,0.12);
+    --red-glow:  rgba(230,57,70,0.25);
+    --text:      #e8e9ed;
+    --muted:     #6b7280;
+    --muted2:    #4b5563;
+    --green:     #4ade80;
+    --amber:     #fbbf24;
+    --mono:      'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Scanline overlay ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.04) 2px,
+      rgba(0,0,0,0.04) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    background: rgba(10,11,15,0.92);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    color: var(--text);
+  }
+  .logo span { color: var(--red); }
+
+  nav { display: flex; gap: 4px; align-items: center; }
+  nav a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+  }
+  nav a:hover { color: var(--text); background: var(--bg3); }
+  .btn-shop {
+    background: var(--red);
+    color: #fff !important;
+    padding: 7px 16px !important;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    transition: opacity 0.15s !important;
+  }
+  .btn-shop:hover { opacity: 0.85; background: var(--red) !important; }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, var(--red-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 88px);
+    letter-spacing: 3px;
+    line-height: 1;
+    position: relative;
+  }
+  .hero-title span { color: var(--red); }
+  .hero-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 12px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── Cluster stat bar ── */
+  .stat-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 2rem auto;
+    max-width: 600px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg2);
+  }
+  .stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 14px 12px;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-val.red { color: var(--red); }
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* ── Section ── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+  .section-head h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--text);
+  }
+  .section-head .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .refresh-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .refresh-btn:hover { color: var(--text); border-color: var(--border2); }
+
+  /* ── Map cards ── */
+  .maps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .map-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .map-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+  .map-card.online { border-color: rgba(74,222,128,0.2); }
+  .map-card.offline { border-color: rgba(230,57,70,0.2); }
+
+  .card-banner {
+    height: 72px;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 14px;
+    position: relative;
+  }
+  .banner-island   { background: linear-gradient(135deg, #050d1a 0%, #0d2645 60%, #163a6a 100%); }
+  .banner-center   { background: linear-gradient(135deg, #100820 0%, #2d1060 60%, #4a1a9a 100%); }
+  .banner-ragnarok { background: linear-gradient(135deg, #1a0500 0%, #4a0f0f 60%, #7a1515 100%); }
+  .banner-valguero { background: linear-gradient(135deg, #050f05 0%, #0d2e0d 60%, #153d15 100%); }
+
+  .card-map-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+  }
+
+  .card-body { padding: 12px 14px; }
+
+  .status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-online  { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .dot-offline { background: var(--red); }
+  .dot-loading { background: var(--amber); animation: blink 1s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .player-badge {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--bg3);
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .player-badge .count { color: var(--text); font-weight: 500; }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding: 8px 14px;
+  }
+  .port-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted2);
+  }
+  .copy-btn {
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 9px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .copy-btn:hover { color: var(--text); border-color: var(--border2); background: var(--bg3); }
+  .copy-btn.copied { color: var(--green); border-color: rgba(74,222,128,0.3); }
+
+  /* ── BM API note ── */
+  .api-setup {
+    margin-top: 1.5rem;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .api-setup strong { color: var(--text); }
+  .api-setup code {
+    font-family: var(--mono);
+    font-size: 12px;
+    background: var(--bg3);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--red);
+    border: 1px solid var(--border);
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--muted2);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  /* ── Last updated ticker ── */
+  #last-updated {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted2);
+  }
+
+  /* ── Spinning refresh icon ── */
+  .spin { animation: spin 1s linear infinite; display: inline-block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 </head>
 <body>
 
-<!-- LOADER -->
-<div id="loader"><div class="loader-logo"></div><div class="loader-track"><div class="loader-fill"></div></div></div>
+<header>
+  <div class="logo">Unlucky<span>.gg</span></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Rules</a>
+    <a href="#">Mods & Rates</a>
+    <a href="#">Vote</a>
+    <a href="#" class="btn-shop">Shop / VIP</a>
+  </nav>
+</header>
 
-<!-- NAV (transparent — becomes solid on scroll) -->
-<nav id="nav">
-  <a href="./index.html" class="nav-logo" aria-label="Bon Accord Engineering"></a>
-  <ul class="nav-links">
-    <li><a href="./index.html" class="active">Home</a></li>
-    <li><a href="./bolts.html">Studbolts &amp; Fasteners</a></li>
-    <li><a href="./coating.html">Coating &amp; Plating</a></li>
-    <li><a href="./machining.html">Machining</a></li>
-    <li><a href="./quality.html">Quality</a></li>
-    <li><a href="./contact.html">Contact</a></li>
-  </ul>
-  <div class="nav-burger" id="navBurger" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
-</nav>
-<div id="nav-drawer">
-  <span class="drawer-close" id="drawerClose">&#10005; Close</span>
-  <a href="./index.html">Home</a>
-  <a href="./bolts.html">Studbolts &amp; Fasteners</a>
-  <a href="./coating.html">Coating &amp; Plating</a>
-  <a href="./machining.html">Machining</a>
-  <a href="./quality.html">Quality</a>
-  <a href="./contact.html">Contact</a>
+<div class="hero">
+  <div class="hero-title">Unlucky<span>.gg</span></div>
+  <div class="hero-sub">ARK: Survival Ascended &nbsp;·&nbsp; 4-Map Community Cluster &nbsp;·&nbsp; UK</div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     HERO — offshore photo fills screen, purple panel shows with margins
-     ═══════════════════════════════════════════════ -->
-<section id="home-hero">
-  <div class="hero-frame">
-    <p class="hero-eyebrow">Aberdeen, Scotland</p>
-    <div class="hero-logo-mark" aria-hidden="true"></div>
-    <h1 class="hero-title">
-      Bon Accord Engineering
-      <em>The Complete Engineering Solution</em>
-    </h1>
-    <p class="hero-sub">Specialist suppliers of stud bolts, fasteners, coatings &amp; precision machining for Oil &amp; Gas, Renewables, Aerospace and Construction.</p>
-    <div class="hero-ctas">
-      <a href="#services" class="btn btn-ghost">Our Services
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="./contact.html" class="btn btn-outline">Get in Touch</a>
-    </div>
+<div class="stat-bar" style="max-width:520px; margin: 0 auto 2.5rem;">
+  <div class="stat-item">
+    <div class="stat-val red" id="total-players">—</div>
+    <div class="stat-lbl">Survivors Online</div>
   </div>
-  <div class="hero-scroll-hint" id="heroScrollHint">
-    <span>Scroll</span>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  <div class="stat-item">
+    <div class="stat-val" id="maps-up">—</div>
+    <div class="stat-lbl">Maps Online</div>
   </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════
-     SERVICES
-     ═══════════════════════════════════════════════ -->
-<section id="services">
-  <div class="services-wrap">
-    <div class="services-intro reveal">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-heading">Three Divisions.<br><span>One Solution.</span></h2>
-      <p class="section-sub">Our massive stock is backed by a diverse machine shop and full coating &amp; plating division.</p>
-    </div>
-    <div class="services-grid">
-      <a href="./bolts.html" class="svc-card reveal d1">
-        <div class="svc-icon"><img src="./img/boltslogo.png" alt=""></div>
-        <h3>Stud Bolts &amp; Fasteners</h3>
-        <p>Extensive stockholding across all grades — Carbon Steel through Inconel, Duplex, Titanium and all petrochemical grades. Rapid dispatch UK-wide.</p>
-        <span class="svc-link">Explore Range <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </a>
-      <a href="./coating.html" class="svc-card reveal d2">
-        <div class="svc-icon"><img src="./img/coatlogo.png" alt=""></div>
-        <h3>Coatings &amp; Platings</h3>
-        <p>Complete coatings division with shot blasting facility. Zinc, PTFE/Xylan, Galvanising, Zinc Nickel and more for subsea and offshore protection.</p>
-        <span class="svc-link">Explore Range <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </a>
-      <a href="./machining.html" class="svc-card reveal d3">
-        <div class="svc-icon"><img src="./img/machlogo.png" alt=""></div>
-        <h3>Precision Machining</h3>
-        <p>In-house machine shop with a wide range of equipment — from non-standard fasteners to precision components, enquiry to completion.</p>
-        <span class="svc-link">Explore Range <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </a>
-    </div>
+  <div class="stat-item">
+    <div class="stat-val">4</div>
+    <div class="stat-lbl">Total Maps</div>
   </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     STATS
-     ═══════════════════════════════════════════════ -->
-<section id="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item reveal d1"><div class="stat-num">ISO</div><div class="stat-lbl">9001:2015 Certified</div></div>
-    <div class="stat-item reveal d2"><div class="stat-num">30+</div><div class="stat-lbl">Years Experience</div></div>
-    <div class="stat-item reveal d3"><div class="stat-num">4</div><div class="stat-lbl">Industry Sectors</div></div>
-    <div class="stat-item reveal d4"><div class="stat-num">UK</div><div class="stat-lbl">Fastest Delivery</div></div>
+  <div class="stat-item">
+    <div class="stat-val" id="max-cap">—</div>
+    <div class="stat-lbl">Max Capacity</div>
   </div>
-</section>
+</div>
 
-<!-- ═══════════════════════════════════════════════
-     ABOUT — harbour background visible around panel
-     ═══════════════════════════════════════════════ -->
-<section id="about-section">
-  <div class="about-inner">
-    <div class="about-text reveal-l">
-      <p class="section-label">About Us</p>
-      <h2 class="section-heading">Always <span>Expanding</span></h2>
-      <p>The team at Bon Accord Engineering, based in Aberdeen, has rapidly become a key player in the supply and manufacture of bolting solutions to the Oil &amp; Gas and Petrochemical industries.</p>
-      <p>Successfully building on our reputation as a supplier of quality products, we adapt to meet each client's individual needs with constant retraining and facility upgrades.</p>
-      <ul class="about-list">
-        <li>Fastest quote to delivery times for standard and special fasteners in the UK</li>
-        <li>Global supply capability across all industries</li>
-        <li>Urgent weekend and after-hours call-outs available</li>
-        <li>Expert team guidance on complex bolting requirements</li>
-      </ul>
-      <div class="about-ctas">
-        <a href="./contact.html" class="btn btn-primary">Contact Our Team</a>
-        <a href="./dlc/BonAccordEngineeringBrochure.pdf" download class="btn btn-outline">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Brochure
-        </a>
+<div class="section">
+  <div class="section-head">
+    <h2>Cluster Status</h2>
+    <div class="line"></div>
+    <span id="last-updated">Fetching...</span>
+    <button class="refresh-btn" onclick="fetchAll()">↻ Refresh</button>
+  </div>
+
+  <div class="maps-grid" id="maps-grid">
+
+    <div class="map-card" id="card-island">
+      <div class="card-banner banner-island">
+        <span class="card-map-name">The Island</span>
       </div>
-    </div>
-    <div class="about-photo-panel reveal-r">
-      <div class="about-photo-inner">
-        <img src="./img/offshore.jpg" alt="Offshore platform — Bon Accord Engineering supply">
-      </div>
-      <div class="about-badge">
-        <div class="about-badge-num">ABZ</div>
-        <div class="about-badge-lbl">Aberdeen</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     INDUSTRIES
-     ═══════════════════════════════════════════════ -->
-<section id="industries">
-  <div class="ind-inner">
-    <div class="ind-text reveal-l">
-      <p class="section-label">Sectors We Serve</p>
-      <h2 class="section-heading">Built for <span>Industry</span></h2>
-      <p>Our expansive portfolio ensures we are a key asset in providing high-quality bolting solutions across multiple demanding sectors worldwide.</p>
-    </div>
-    <div class="ind-tags reveal-r">
-      <span class="ind-tag">Oil &amp; Gas</span>
-      <span class="ind-tag">Petrochemical</span>
-      <span class="ind-tag">Renewable Energy</span>
-      <span class="ind-tag">Aerospace</span>
-      <span class="ind-tag">Construction</span>
-      <span class="ind-tag">Offshore</span>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     LINKEDIN / NEWS
-     ═══════════════════════════════════════════════ -->
-<section id="blog-section">
-  <div class="blog-inner">
-    <div class="blog-head reveal">
-      <div>
-        <div class="li-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          Latest from LinkedIn
+      <div class="card-body">
+        <div class="status-row">
+          <div class="status-pill">
+            <span class="dot dot-loading" id="dot-island"></span>
+            <span id="status-island">Checking...</span>
+          </div>
+          <div class="player-badge" id="badge-island"><span class="count">—</span> / — online</div>
         </div>
-        <h2 class="section-heading">Latest <span>News</span></h2>
       </div>
-      <a href="https://www.linkedin.com/company/bon-accord-engineering-ltd" target="_blank" rel="noopener" class="blog-follow-link">
-        Follow us on LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-    <div class="li-scroll-outer reveal">
-      <div class="li-scroll">
-        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7236377372457906176" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
-        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7141101678115618816" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
-        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7125805376750415875" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
-        <div class="li-post"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7122854063083327488" height="580" width="500" frameborder="0" allowfullscreen title="LinkedIn post"></iframe></div>
+      <div class="card-footer">
+        <span class="port-label" id="port-island">YOUR.IP:7777</span>
+        <button class="copy-btn" onclick="copyIP('YOUR.IP', 7777, this)">Copy IP</button>
       </div>
     </div>
-    <div class="blog-cta reveal">
-      <p>Stay up to date with news, products and industry updates</p>
-      <a href="https://www.linkedin.com/company/bon-accord-engineering-ltd" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        Follow on LinkedIn
-      </a>
-    </div>
-  </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════
-     ANCO FEATURE
-     ═══════════════════════════════════════════════ -->
-<section id="anco-feature">
-  <div class="anco-left reveal-l">
-    <p class="section-label">Featured Product</p>
-    <h2>ANCO<sup>®</sup> <span>PN-LOC<sup>®</sup></span> Anti-Vibration Nut</h2>
-    <p>Bon Accord Engineering are the sole Western EU stockists of the ANCO<sup>®</sup> PN-LOC<sup>®</sup> Nut — a self-locking, reusable anti-vibration nut manufactured exclusively in Texas.</p>
-    <a href="./anco.html" class="btn btn-primary">Learn More <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-  </div>
-  <div class="anco-right"></div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════
-     CONTACT CTA
-     ═══════════════════════════════════════════════ -->
-<section id="cta-section">
-  <div class="cta-inner">
-    <div class="cta-left reveal-l">
-      <h2>The UK's Fastest <span>Bolting Solution</span></h2>
-      <p>From initial enquiry through to delivery, our Aberdeen-based sales team ensures the fastest turnaround times for standard and special fasteners in the UK.</p>
-      <p>Urgent weekend or after-hours call-outs are a common occurrence — and something we thrive on.</p>
-      <a href="./dlc/BonAccordEngineeringBrochure.pdf" download class="cta-dl">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download Brochure
-      </a>
-      <div class="expect-grid">
-        <div class="expect-item reveal d1"><span class="expect-dot"></span>Fastest UK quote to delivery</div>
-        <div class="expect-item reveal d2"><span class="expect-dot"></span>Global supply capability</div>
-        <div class="expect-item reveal d3"><span class="expect-dot"></span>Expert technical knowledge</div>
-        <div class="expect-item reveal d4"><span class="expect-dot"></span>Urgent call-out service</div>
+    <div class="map-card" id="card-center">
+      <div class="card-banner banner-center">
+        <span class="card-map-name">The Center</span>
+      </div>
+      <div class="card-body">
+        <div class="status-row">
+          <div class="status-pill">
+            <span class="dot dot-loading" id="dot-center"></span>
+            <span id="status-center">Checking...</span>
+          </div>
+          <div class="player-badge" id="badge-center"><span class="count">—</span> / — online</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="port-label" id="port-center">YOUR.IP:7779</span>
+        <button class="copy-btn" onclick="copyIP('YOUR.IP', 7779, this)">Copy IP</button>
       </div>
     </div>
-    <div class="cta-card reveal-r">
-      <h3>Get in Touch</h3>
-      <a href="tel:+441224878898"><div class="cta-row"><div class="cta-row-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><p>+44 (0)1224 878898</p></div></a>
-      <a href="mailto:sales@bonaccordengineering.com"><div class="cta-row"><div class="cta-row-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><p>sales@bonaccordengineering.com</p></div></a>
-      <a href="mailto:phil@bonaccordengineering.com"><div class="cta-row"><div class="cta-row-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><p>Quality: phil@bonaccordengineering.com</p></div></a>
-      <a href="./contact.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:24px;">Full Contact Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
+    <div class="map-card" id="card-ragnarok">
+      <div class="card-banner banner-ragnarok">
+        <span class="card-map-name">Ragnarok</span>
+      </div>
+      <div class="card-body">
+        <div class="status-row">
+          <div class="status-pill">
+            <span class="dot dot-loading" id="dot-ragnarok"></span>
+            <span id="status-ragnarok">Checking...</span>
+          </div>
+          <div class="player-badge" id="badge-ragnarok"><span class="count">—</span> / — online</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="port-label" id="port-ragnarok">YOUR.IP:7781</span>
+        <button class="copy-btn" onclick="copyIP('YOUR.IP', 7781, this)">Copy IP</button>
+      </div>
+    </div>
+
+    <div class="map-card" id="card-valguero">
+      <div class="card-banner banner-valguero">
+        <span class="card-map-name">Valguero</span>
+      </div>
+      <div class="card-body">
+        <div class="status-row">
+          <div class="status-pill">
+            <span class="dot dot-loading" id="dot-valguero"></span>
+            <span id="status-valguero">Checking...</span>
+          </div>
+          <div class="player-badge" id="badge-valguero"><span class="count">—</span> / — online</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="port-label" id="port-valguero">YOUR.IP:7783</span>
+        <button class="copy-btn" onclick="copyIP('YOUR.IP', 7783, this)">Copy IP</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="api-setup">
+    <strong>⚙ Setup required — replace BattleMetrics server IDs</strong><br>
+    Open this file and find the <code>SERVERS</code> config near the top of the &lt;script&gt;.
+    Replace each <code>bmId</code> with your real BattleMetrics server ID (find it by searching
+    <strong>battlemetrics.com/servers/arksa</strong> for your server — the number in the URL is your ID).
+    Also replace <code>YOUR.IP</code> with your public IP or domain.
+    Once IDs are set, the page polls the free BattleMetrics API every 60 seconds automatically —
+    no API key required.
+  </div>
+</div>
+
 <footer>
-  <div class="foot-top">
-    <div class="foot-brand"><div class="flogo"></div><p>Specialist suppliers of stud bolts, fasteners, coatings and machined components. Based in Aberdeen, serving the globe.</p></div>
-    <div class="foot-col"><h4>Navigation</h4><ul><li><a href="./index.html">Home</a></li><li><a href="./bolts.html">Studbolts &amp; Fasteners</a></li><li><a href="./coating.html">Coating &amp; Plating</a></li><li><a href="./machining.html">Machining</a></li><li><a href="./quality.html">Quality</a></li><li><a href="./anco.html">ANCO&reg; Nut</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
-    <div class="foot-col"><h4>Downloads</h4><ul><li><a href="./dlc/BonAccordEngineeringBrochure.pdf" download>Company Brochure</a></li><li><a href="./dlc/BonAccordEngineeringLtdQMS2021.pdf" download>ISO Certification</a></li><li><a href="./dlc/BonAccordEngineeringTCs.pdf" download>Terms &amp; Conditions</a></li><li><a href="./dlc/MachineShopEquipment.pdf" download>Machine Shop Equipment</a></li><li><a href="./dlc/BonAccordEngineeringanco_pdf.pdf" download>ANCO&reg; Brochure</a></li></ul></div>
-    <div class="foot-social"><h4>Follow Us</h4><div class="social-row"><a href="https://www.facebook.com/bonaccordengineering/" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/bon-accord-engineering-ltd" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://twitter.com/BON_ACCORD_ENG" class="social-btn" aria-label="X" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/bon_accord_engineering/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div>
-  </div>
-  <div class="foot-divider"><div class="divider"></div></div>
-  <div class="foot-bottom">
-    <p>&copy; 2019&ndash;2025 Bon Accord Engineering Ltd &nbsp;|&nbsp; T: <a href="tel:01224878898">01224 878898</a> &nbsp;|&nbsp; E: <a href="mailto:sales@bonaccordengineering.com">sales@bonaccordengineering.com</a></p>
-    <a href="./dlc/BonAccordEngineeringTCs.pdf" download>Terms &amp; Conditions</a>
-    <div class="foot-cert" title="ISO 9001:2015 Certified"></div>
-  </div>
+  <span>© 2026 Unlucky.gg &nbsp;·&nbsp; ARK: Survival Ascended</span>
+  <span>
+    <a href="#">Discord</a> &nbsp;·&nbsp;
+    <a href="#">Vote</a> &nbsp;·&nbsp;
+    <a href="#">Shop</a>
+  </span>
 </footer>
 
-<script src="./js/script.js"></script>
-<script src="./js/flickity.pkgd.min.js"></script>
+<script>
+  // ─────────────────────────────────────────────
+  //  CONFIG — replace bmId values with your real
+  //  BattleMetrics server IDs, and YOUR.IP with
+  //  your actual public IP / domain
+  // ─────────────────────────────────────────────
+  const PUBLIC_IP = 'YOUR.IP';
+
+  const SERVERS = [
+    { key: 'island',   label: 'The Island',  port: 7777, bmId: 'REPLACE_ME' },
+    { key: 'center',   label: 'The Center',  port: 7779, bmId: 'REPLACE_ME' },
+    { key: 'ragnarok', label: 'Ragnarok',    port: 7781, bmId: 'REPLACE_ME' },
+    { key: 'valguero', label: 'Valguero',    port: 7783, bmId: 'REPLACE_ME' },
+  ];
+
+  const POLL_INTERVAL_MS = 60000; // 60 seconds
+
+  // ─────────────────────────────────────────────
+
+  function setStatus(key, online, players, maxPlayers) {
+    const card   = document.getElementById('card-' + key);
+    const dot    = document.getElementById('dot-' + key);
+    const label  = document.getElementById('status-' + key);
+    const badge  = document.getElementById('badge-' + key);
+
+    card.className = 'map-card ' + (online ? 'online' : 'offline');
+
+    if (online) {
+      dot.className = 'dot dot-online';
+      label.textContent = 'Online';
+      badge.innerHTML = '<span class="count">' + players + '</span> / ' + maxPlayers + ' online';
+    } else {
+      dot.className = 'dot dot-offline';
+      label.textContent = 'Offline';
+      badge.innerHTML = '<span class="count" style="color:var(--red)">—</span> offline';
+    }
+  }
+
+  function setLoading(key) {
+    const dot   = document.getElementById('dot-' + key);
+    const label = document.getElementById('status-' + key);
+    const badge = document.getElementById('badge-' + key);
+    dot.className = 'dot dot-loading';
+    label.textContent = 'Checking...';
+    badge.innerHTML = '<span class="count">—</span> / — online';
+  }
+
+  async function fetchServer(server) {
+    // BattleMetrics public API — no auth required for public server data
+    const url = 'https://api.battlemetrics.com/servers/' + server.bmId;
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const json = await resp.json();
+    const attrs = json.data.attributes;
+    return {
+      online:     attrs.status === 'online',
+      players:    attrs.players,
+      maxPlayers: attrs.maxPlayers,
+    };
+  }
+
+  async function fetchAll() {
+    document.getElementById('last-updated').textContent = '↻ Refreshing...';
+
+    let totalPlayers = 0;
+    let mapsUp = 0;
+    let totalMax = 0;
+
+    // If IDs haven't been replaced yet, show a placeholder state
+    const unconfigured = SERVERS.every(s => s.bmId === 'REPLACE_ME');
+
+    await Promise.allSettled(
+      SERVERS.map(async (server) => {
+        setLoading(server.key);
+        if (unconfigured) {
+          // Demo mode — show placeholder until IDs are configured
+          await new Promise(r => setTimeout(r, 600 + Math.random() * 400));
+          setStatus(server.key, false, 0, 70);
+          return;
+        }
+        try {
+          const data = await fetchServer(server);
+          setStatus(server.key, data.online, data.players, data.maxPlayers);
+          if (data.online) {
+            totalPlayers += data.players;
+            totalMax     += data.maxPlayers;
+            mapsUp++;
+          }
+        } catch (err) {
+          console.error(server.label, err);
+          setStatus(server.key, false, 0, 0);
+        }
+      })
+    );
+
+    if (!unconfigured) {
+      document.getElementById('total-players').textContent = totalPlayers;
+      document.getElementById('maps-up').textContent = mapsUp + ' / ' + SERVERS.length;
+      document.getElementById('max-cap').textContent = totalMax || '—';
+    } else {
+      document.getElementById('total-players').textContent = '—';
+      document.getElementById('maps-up').textContent = '— / 4';
+      document.getElementById('max-cap').textContent = '—';
+    }
+
+    const now = new Date();
+    document.getElementById('last-updated').textContent =
+      'Updated ' + now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  }
+
+  function copyIP(ip, port, btn) {
+    const str = ip + ':' + port;
+    navigator.clipboard.writeText(str).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy IP';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // Initial fetch + auto-poll
+  fetchAll();
+  setInterval(fetchAll, POLL_INTERVAL_MS);
+</script>
 </body>
 </html>
