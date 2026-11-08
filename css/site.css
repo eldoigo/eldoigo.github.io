@@ -493,3 +493,10 @@ main:focus{outline:none;}
 .site-nav__toggle svg{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
 .coating-hero{border-radius:var(--radius);box-shadow:0 26px 50px -30px rgba(30,10,45,.55);}
 @media (max-width:1050px){.b-header-bot .b-bot-left{padding-bottom:22px;}}
+/* LinkedIn posts on phones and tablets.
+   The embeds can't tell the page how tall they are, so the height follows the width:
+   about 370px for the header, text and Like/Comment row, plus room for a square photo. */
+@media (max-width:1050px){
+	.blog-data{width:100%;gap:24px;border:0;align-items:center;}
+	.mob-blog{width:min(92vw,504px);height:calc(370px + min(92vw,504px));max-height:none;margin-top:0;}
+}
