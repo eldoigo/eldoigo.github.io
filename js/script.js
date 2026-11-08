@@ -1,13 +1,13 @@
 /* =====================================================================
-   Bon Accord Engineering — site script
-   Plain JavaScript, no jQuery or AOS needed.
-   - Loader: waits for the hero photo + fonts (capped), full intro only on
-     the first page of a visit, quick fade after that
+   Bon Accord Engineering — site script (update 3)
+   Plain JavaScript, no libraries.
+   - Loader (styled after the Dominic's site): full intro on the first page
+     of a visit, quick fade after that
    - Fade-out between pages
-   - Header tucks away past 300px
-   - Mobile menu
-   - Smooth scrolling for on-page anchors only
-   - Scroll reveals via IntersectionObserver (replaces AOS)
+   - Navigation: solid bar on scroll, "What We Do" dropdown, mobile menu
+   - Smooth scrolling for on-page anchors
+   - Footer copyright year (checked against the web server's clock)
+   - Scroll reveals via IntersectionObserver
    ===================================================================== */
 (function () {
 	'use strict';
@@ -15,16 +15,17 @@
 	var root = document.documentElement;
 	var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	var quick = root.classList.contains('ba-quick');
-	var startTime = window.performance && performance.now ? performance.now() : 0;
+	var revealItems = [];     // declared up here: with "defer" the page may already be
+	var revealsStarted = false; // ready, so code below can run before the bottom of this file
+	function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
+	var startTime = now();
 
 	/* ---------------------------------------------------------------
 	   Loader
 	   --------------------------------------------------------------- */
-	var MIN_INTRO = quick ? 0 : 700;   // keep the logo up long enough to read
-	var MAX_WAIT = quick ? 1200 : 2600; // never hold the page longer than this
+	var MIN_INTRO = quick ? 0 : (reduceMotion ? 600 : 1900); // let the bar fill on a first visit
+	var MAX_WAIT = quick ? 1200 : 3400;                     // never hold the page longer than this
 	var loaded = false;
-
-	function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
 
 	function markLoaded() {
 		if (loaded) return;
@@ -37,19 +38,16 @@
 		}, wait);
 	}
 
-	// The photo that matters most on this page (home hero / bolts banner)
 	function criticalImageUrl() {
 		var el = document.querySelector('#hero') || document.querySelector('#bolts1 .b-header-bot');
 		if (!el) return null;
-		var bg = window.getComputedStyle(el).backgroundImage || '';
-		var m = bg.match(/url\(["']?(.*?)["']?\)/);
+		var m = (window.getComputedStyle(el).backgroundImage || '').match(/url\(["']?(.*?)["']?\)/);
 		return m ? m[1] : null;
 	}
 
 	function whenCriticalReady(done) {
 		var pending = 0;
 		function tick() { if (--pending <= 0) done(); }
-
 		var url = criticalImageUrl();
 		if (url) {
 			pending++;
@@ -65,13 +63,8 @@
 	}
 
 	setTimeout(markLoaded, MAX_WAIT);
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', function () { whenCriticalReady(markLoaded); });
-	} else {
-		whenCriticalReady(markLoaded);
-	}
+	onReady(function () { whenCriticalReady(markLoaded); });
 
-	// Coming back via the browser's back button: make sure the page isn't stuck behind the veil
 	window.addEventListener('pageshow', function (e) {
 		if (e.persisted) {
 			root.classList.remove('is-leaving');
@@ -79,9 +72,6 @@
 		}
 	});
 
-	/* ---------------------------------------------------------------
-	   Everything below needs the DOM
-	   --------------------------------------------------------------- */
 	function onReady(fn) {
 		if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
 		else fn();
@@ -89,23 +79,18 @@
 
 	onReady(function () {
 		initYear();
-		initHeader();
-		initMenu();
+		initNav();
 		initLinks();
-		initButtonLinks();
 		prepareReveals();
 	});
 
-	/* Footer copyright year.
-	   Set straight away from the visitor's clock, then confirmed against the
-	   web server's own clock (the Date header on a tiny HEAD request), so a
-	   device with the wrong date can't show the wrong year. */
+	/* ---------------------------------------------------------------
+	   Footer year: visitor's clock first, then the web server's clock
+	   --------------------------------------------------------------- */
 	function initYear() {
 		var spans = document.querySelectorAll('[data-year]');
 		if (!spans.length) return;
-		function setYear(y) {
-			Array.prototype.forEach.call(spans, function (s) { s.textContent = y; });
-		}
+		function setYear(y) { Array.prototype.forEach.call(spans, function (s) { s.textContent = y; }); }
 		setYear(new Date().getFullYear());
 		if (!window.fetch || location.protocol.indexOf('http') !== 0) return;
 		fetch(location.href, { method: 'HEAD', cache: 'no-store' }).then(function (res) {
@@ -114,67 +99,80 @@
 		}).catch(function () {});
 	}
 
-	/* Header: tuck away after 300px, as before, but with a CSS transition */
-	function initHeader() {
-		var header = document.querySelector('.header1');
-		if (!header) return;
+	/* ---------------------------------------------------------------
+	   Navigation
+	   --------------------------------------------------------------- */
+	function initNav() {
+		var nav = document.querySelector('[data-nav]');
+		if (!nav) return;
+		var burger = nav.querySelector('.site-nav__burger');
+		var menu = nav.querySelector('.site-nav__menu');
+		var dropdowns = Array.prototype.slice.call(nav.querySelectorAll('.has-dropdown'));
+		var mobile = window.matchMedia('(max-width: 1050px)');
+
+		// Solid bar once the page scrolls
 		var ticking = false;
-		function update() {
-			header.classList.toggle('is-tucked', (window.pageYOffset || 0) > 300);
+		function updateScrolled() {
+			nav.classList.toggle('is-scrolled', (window.pageYOffset || 0) > 24);
 			ticking = false;
 		}
 		window.addEventListener('scroll', function () {
-			if (!ticking) { ticking = true; requestAnimationFrame(update); }
+			if (!ticking) { ticking = true; requestAnimationFrame(updateScrolled); }
 		}, { passive: true });
-		update();
-	}
+		updateScrolled();
 
-	/* Mobile menu */
-	function initMenu() {
-		var menu = document.querySelector('.resp-menu');
-		if (!menu) return;
-		var openers = document.querySelectorAll('.resp-men-but');
-		var closer = menu.querySelector('.exit');
-
-		function setOpen(open) {
-			menu.classList.toggle('is-open', open);
-			document.body.classList.toggle('menu-open', open);
-			menu.setAttribute('aria-hidden', open ? 'false' : 'true');
-			if (open) {
-				var first = menu.querySelector('a');
-				if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, 50);
-			}
+		// "What We Do" dropdown
+		function setDropdown(li, open) {
+			li.classList.toggle('is-open', open);
+			li.querySelector('.site-nav__toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
 		}
-
-		menu.setAttribute('aria-hidden', 'true');
-		Array.prototype.forEach.call(openers, function (btn) {
-			btn.setAttribute('role', 'button');
-			btn.setAttribute('tabindex', '0');
-			btn.setAttribute('aria-label', 'Open menu');
-			btn.addEventListener('click', function () { setOpen(!menu.classList.contains('is-open')); });
-			btn.addEventListener('keydown', function (e) {
-				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(true); }
+		function closeDropdowns(except) {
+			dropdowns.forEach(function (li) { if (li !== except) setDropdown(li, false); });
+		}
+		dropdowns.forEach(function (li) {
+			var toggle = li.querySelector('.site-nav__toggle');
+			toggle.addEventListener('click', function () {
+				var open = !li.classList.contains('is-open');
+				closeDropdowns(li);
+				setDropdown(li, open);
 			});
+			li.addEventListener('mouseleave', function () { if (!mobile.matches) setDropdown(li, false); });
+			// Open on hover/focus is handled in CSS; keep aria-expanded truthful
+			li.addEventListener('mouseenter', function () { if (!mobile.matches) toggle.setAttribute('aria-expanded', 'true'); });
 		});
-		if (closer) {
-			closer.setAttribute('role', 'button');
-			closer.setAttribute('tabindex', '0');
-			closer.setAttribute('aria-label', 'Close menu');
-			closer.addEventListener('click', function () { setOpen(false); });
-			closer.addEventListener('keydown', function (e) {
-				if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(false); }
-			});
+		document.addEventListener('click', function (e) {
+			if (!e.target.closest('.has-dropdown')) closeDropdowns();
+		});
+
+		// Mobile menu
+		function setMenu(open) {
+			nav.classList.toggle('is-open', open);
+			document.body.classList.toggle('nav-open', open);
+			burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+			burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+			if (!open) closeDropdowns();
 		}
+		if (burger) {
+			burger.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
+		}
+		if (menu) {
+			menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+		}
+		var onBreakpoint = function () { setMenu(false); };
+		if (mobile.addEventListener) mobile.addEventListener('change', onBreakpoint);
+		else if (mobile.addListener) mobile.addListener(onBreakpoint);
+
 		document.addEventListener('keydown', function (e) {
-			if (e.key === 'Escape' && menu.classList.contains('is-open')) setOpen(false);
-		});
-		menu.addEventListener('click', function (e) {
-			if (e.target.closest('a')) setOpen(false);
+			if (e.key !== 'Escape') return;
+			var openDd = nav.querySelector('.has-dropdown.is-open');
+			if (openDd) { closeDropdowns(); openDd.querySelector('.site-nav__toggle').focus(); return; }
+			if (nav.classList.contains('is-open')) { setMenu(false); burger.focus(); }
 		});
 	}
 
-	/* Links: smooth-scroll on-page anchors, fade out when going to another page.
-	   (The old jQuery handler intercepted every link on the site.) */
+	/* ---------------------------------------------------------------
+	   Links: smooth-scroll on-page anchors, fade when changing page
+	   --------------------------------------------------------------- */
 	function initLinks() {
 		document.addEventListener('click', function (e) {
 			if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -182,20 +180,16 @@
 			if (!a) return;
 			var href = a.getAttribute('href');
 
-			// On-page anchor
 			if (href.charAt(0) === '#') {
-				e.preventDefault();
 				var target = href.length > 1 ? document.getElementById(href.slice(1)) : null;
-				if (target) {
-					target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-					if (history.replaceState) history.replaceState(null, '', href);
-				} else {
-					window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-				}
+				if (!target) return;
+				e.preventDefault();
+				target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+				if (history.replaceState) history.replaceState(null, '', href);
+				if (href === '#main' || target.hasAttribute('tabindex')) target.focus({ preventScroll: true });
 				return;
 			}
 
-			// Another page on this site: brief fade, then go
 			if (reduceMotion || a.target === '_blank' || a.hasAttribute('download')) return;
 			var url;
 			try { url = new URL(a.href, location.href); } catch (err) { return; }
@@ -208,30 +202,14 @@
 		});
 	}
 
-	/* Some buttons wrap their link (<button><a>): make the whole button clickable */
-	function initButtonLinks() {
-		Array.prototype.forEach.call(document.querySelectorAll('button.button'), function (btn) {
-			var link = btn.querySelector('a[href]');
-			if (!link) return;
-			btn.addEventListener('click', function (e) {
-				if (!e.target.closest('a')) link.click();
-			});
-		});
-	}
-
 	/* ---------------------------------------------------------------
 	   Scroll reveals
 	   --------------------------------------------------------------- */
-	var revealItems = [];
-	var revealsStarted = false;
-
 	function prepareReveals() {
 		revealItems = Array.prototype.slice.call(document.querySelectorAll('[data-reveal], [data-reveal-stagger]'));
 		revealItems.forEach(function (el) {
 			if (el.hasAttribute('data-reveal-stagger')) {
-				Array.prototype.forEach.call(el.children, function (child, i) {
-					child.style.setProperty('--i', i);
-				});
+				Array.prototype.forEach.call(el.children, function (child, i) { child.style.setProperty('--i', i); });
 			}
 		});
 		if (root.classList.contains('is-loaded')) startReveals();
@@ -245,26 +223,22 @@
 	function startReveals() {
 		if (revealsStarted || !revealItems.length) return;
 		revealsStarted = true;
-
 		if (reduceMotion || !('IntersectionObserver' in window)) {
 			revealItems.forEach(function (el) { reveal(el, 0); });
 			return;
 		}
-
 		var io = new IntersectionObserver(function (entries) {
 			var batch = [];
 			entries.forEach(function (entry) {
 				if (entry.isIntersecting) {
 					batch.push(entry);
 				} else if (entry.boundingClientRect.bottom < 0) {
-					// Already scrolled past (e.g. page reloaded half-way down): show at once
 					entry.target.style.transition = 'none';
 					reveal(entry.target, 0);
 					io.unobserve(entry.target);
 					requestAnimationFrame(function () { entry.target.style.transition = ''; });
 				}
 			});
-			// Items that arrive together cascade top-to-bottom, left-to-right
 			batch.sort(function (a, b) {
 				return (a.boundingClientRect.top - b.boundingClientRect.top) || (a.boundingClientRect.left - b.boundingClientRect.left);
 			});
@@ -272,12 +246,7 @@
 				reveal(entry.target, Math.min(i, 4) * 90);
 				io.unobserve(entry.target);
 			});
-		}, {
-			// Fire as soon as the top of an element is ~10% inside the viewport
-			rootMargin: '0px 0px -10% 0px',
-			threshold: 0
-		});
-
+		}, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
 		revealItems.forEach(function (el) { io.observe(el); });
 	}
 })();
